@@ -16,6 +16,11 @@
           <p class="brand-sub">テイクアウト専門</p>
         </div>
       </div>
+      <button class="menu-toggle" aria-label="メニュー">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="nav">
         <a href="#menu">メニュー</a>
         <a href="#about">お店について</a>
@@ -232,5 +237,29 @@
       <small>© 焼き鳥 ししとう - All rights reserved.</small>
     </div>
   </footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    const navLinks = document.querySelectorAll('.nav a');
+    
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+    
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.site-header')) {
+        nav.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>

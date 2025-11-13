@@ -1,21 +1,30 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;background:#fff;color:#222;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;background:linear-gradient(135deg,#fefefe 0%,#f9f7f5 100%);color:#222;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-attachment:fixed}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
-.site-header{background:#fff;border-bottom:1px solid #e8e8e8;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;margin:0;position:relative;width:32px;height:24px}
+.menu-toggle span{display:block;width:22px;height:2px;background:#c44;position:absolute;left:5px;transition:all .3s}
+.menu-toggle span:nth-child(1){top:4px}
+.menu-toggle span:nth-child(2){top:11px}
+.menu-toggle span:nth-child(3){top:18px}
+.menu-toggle.active span:nth-child(1){transform:rotate(45deg);top:11px}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:rotate(-45deg);top:11px}
+.site-header{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);border-bottom:1px solid #e8e8e8;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.03)}
 .site-header .container{max-width:1200px;margin:0 auto;padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
 .branding{display:flex;align-items:center;gap:.6rem}
 .brand-logo{width:40px;height:40px;border-radius:8px;object-fit:cover}
 .brand-text{display:flex;flex-direction:column;gap:.1rem}
 .brand{font-size:1.1rem;font-weight:700;color:#c44;letter-spacing:.02em}
 .brand-sub{font-size:.7rem;color:#888;font-weight:500;text-transform:uppercase;letter-spacing:.08em}
-.nav{display:flex;gap:1.8rem}
-.nav a{font-size:.9rem;color:#444;font-weight:500;transition:color .2s;position:relative}
+.nav{display:flex;gap:1.8rem;transition:all .3s}
+.nav a{font-size:.9rem;color:#444;font-weight:500;transition:color .2s;position:relative;display:block}
 .nav a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#c44;transform:scaleX(0);transition:transform .2s}
 .nav a:hover{color:#c44}
 .nav a:hover::after{transform:scaleX(1)}
-.hero{background:linear-gradient(135deg,#fef9f8 0%,#fff 100%);padding:3rem 0;border-bottom:1px solid #f5f5f5}
+.hero{background:linear-gradient(135deg,rgba(204,68,68,.03) 0%,rgba(255,250,248,.5) 50%,rgba(255,255,255,.3) 100%);padding:3rem 0;border-bottom:1px solid #f5f5f5;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,%3Csvg width="60" height="60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h60v60H0z" fill="none"/%3E%3Cpath d="M30 30m-1 0a1 1 0 1 0 2 0 1 1 0 1 0-2 0" fill="%23c44" opacity=".03"/%3E%3C/svg%3E');opacity:.4;pointer-events:none}
 .hero .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 .hero h2{font-size:2rem;font-weight:800;color:#c44;line-height:1.4;margin-bottom:.8rem;letter-spacing:.02em}
 .hero .lead{font-size:1rem;color:#666;line-height:1.7;max-width:700px}
@@ -24,8 +33,9 @@ ul{list-style:none}
 .section h3{font-size:1.6rem;font-weight:800;color:#c44;margin-bottom:1.5rem;letter-spacing:.02em;position:relative;display:inline-block;padding-bottom:.5rem}
 .section h3::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,#c44 0%,transparent 100%)}
 .menu-intro{color:#666;margin-bottom:2rem;font-size:.95rem}
-.menu-section{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:1.8rem;margin-bottom:1.5rem;transition:box-shadow .2s}
+.menu-section{background:rgba(255,255,255,.95);border:1px solid #e8e8e8;border-radius:12px;padding:1.8rem;margin-bottom:1.5rem;transition:box-shadow .2s;backdrop-filter:blur(5px)}
 .menu-section:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.menu-section:nth-child(even){background:rgba(254,252,251,.95)}
 .menu-section h4{font-size:1.2rem;font-weight:700;color:#333;margin-bottom:1rem;letter-spacing:.01em}
 .menu-section h5{font-size:1rem;font-weight:600;color:#555;margin:1.2rem 0 .6rem}
 .menu-section ul{padding-left:0}
@@ -47,14 +57,17 @@ ul{list-style:none}
 .site-footer{background:#f8f8f8;border-top:1px solid #e8e8e8;padding:2rem 1.5rem;text-align:center;margin-top:4rem}
 .site-footer small{color:#888;font-size:.85rem}
 @media(max-width:768px){
-.site-header .container{padding:.6rem 1rem;flex-wrap:nowrap}
+.site-header .container{padding:.6rem 1rem;position:relative}
 .branding{gap:.5rem;flex-shrink:0}
 .brand-logo{width:32px;height:32px}
 .brand{font-size:.95rem;white-space:nowrap}
 .brand-sub{font-size:.65rem;white-space:nowrap}
-.nav{gap:1rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-shrink:1}
-.nav::-webkit-scrollbar{display:none}
-.nav a{font-size:.85rem;white-space:nowrap}
+.menu-toggle{display:block}
+.nav{position:absolute;top:100%;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);flex-direction:column;gap:0;padding:1rem;border-bottom:1px solid #e8e8e8;box-shadow:0 2px 8px rgba(0,0,0,.1);max-height:0;overflow:hidden;opacity:0;transition:all .3s}
+.nav.active{max-height:300px;opacity:1;padding:1rem}
+.nav a{font-size:.9rem;padding:.8rem 1rem;border-bottom:1px solid #f5f5f5}
+.nav a:last-child{border-bottom:none}
+.nav a::after{display:none}
 .hero{padding:2rem 0}
 .hero h2{font-size:1.5rem}
 .hero .lead{font-size:.9rem}
@@ -69,12 +82,12 @@ ul{list-style:none}
 .menu-grid li{padding:.7rem .8rem;font-size:.85rem}
 }
 @media(max-width:480px){
-.site-header .container{padding:.5rem .8rem;gap:.6rem;flex-wrap:nowrap}
+.site-header .container{padding:.5rem .8rem;gap:.6rem}
 .brand-logo{width:28px;height:28px}
 .brand{font-size:.85rem;white-space:nowrap}
 .brand-sub{font-size:.58rem;white-space:nowrap}
-.nav{gap:.8rem;overflow-x:auto;padding-right:.5rem}
-.nav a{font-size:.78rem;white-space:nowrap}
+.menu-toggle{display:block}
+.nav a{font-size:.88rem;padding:.75rem 1rem}
 .hero{padding:1.5rem 0}
 .hero h2{font-size:1.25rem;margin-bottom:.6rem;line-height:1.5;word-break:keep-all;overflow-wrap:break-word}
 .hero .lead{font-size:.85rem;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}

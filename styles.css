@@ -47,18 +47,20 @@ ul{list-style:none}
 .site-footer{background:#f8f8f8;border-top:1px solid #e8e8e8;padding:2rem 1.5rem;text-align:center;margin-top:4rem}
 .site-footer small{color:#888;font-size:.85rem}
 @media(max-width:768px){
-.site-header .container{padding:.6rem 1rem}
-.branding{gap:.5rem}
+.site-header .container{padding:.6rem 1rem;flex-wrap:nowrap}
+.branding{gap:.5rem;flex-shrink:0}
 .brand-logo{width:32px;height:32px}
-.brand{font-size:.95rem}
-.brand-sub{font-size:.65rem}
-.nav{gap:1rem}
-.nav a{font-size:.85rem}
+.brand{font-size:.95rem;white-space:nowrap}
+.brand-sub{font-size:.65rem;white-space:nowrap}
+.nav{gap:1rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-shrink:1}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font-size:.85rem;white-space:nowrap}
 .hero{padding:2rem 0}
 .hero h2{font-size:1.5rem}
 .hero .lead{font-size:.9rem}
 .container{padding:0 1rem}
 .section{padding:2rem 0}
+.section .container{padding:0 1rem}
 .section h3{font-size:1.4rem}
 .menu-section{padding:1.3rem;margin-bottom:1rem}
 .menu-section h4{font-size:1.1rem}
@@ -67,20 +69,23 @@ ul{list-style:none}
 .menu-grid li{padding:.7rem .8rem;font-size:.85rem}
 }
 @media(max-width:480px){
-.site-header .container{padding:.5rem .8rem;gap:.8rem}
+.site-header .container{padding:.5rem .8rem;gap:.6rem;flex-wrap:nowrap}
 .brand-logo{width:28px;height:28px}
-.brand{font-size:.88rem}
-.brand-sub{font-size:.6rem}
-.nav{gap:.7rem}
-.nav a{font-size:.8rem}
+.brand{font-size:.85rem;white-space:nowrap}
+.brand-sub{font-size:.58rem;white-space:nowrap}
+.nav{gap:.8rem;overflow-x:auto;padding-right:.5rem}
+.nav a{font-size:.78rem;white-space:nowrap}
 .hero{padding:1.5rem 0}
-.hero h2{font-size:1.3rem;margin-bottom:.6rem}
-.hero .lead{font-size:.85rem}
+.hero h2{font-size:1.25rem;margin-bottom:.6rem;line-height:1.5;word-break:keep-all;overflow-wrap:break-word}
+.hero .lead{font-size:.85rem;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
 .section{padding:1.5rem 0}
-.section h3{font-size:1.25rem;margin-bottom:1rem}
+.section h3{font-size:1.25rem;margin-bottom:1rem;word-break:keep-all;overflow-wrap:break-word}
+#access li{word-break:keep-all;overflow-wrap:break-word;line-height:1.7}
+#contact p{word-break:keep-all;overflow-wrap:break-word}
 .menu-section{padding:1rem;border-radius:8px}
-.menu-section h4{font-size:1.05rem;margin-bottom:.8rem}
+.menu-section h4{font-size:1.05rem;margin-bottom:.8rem;word-break:keep-all;overflow-wrap:break-word}
+.menu-section li{word-break:keep-all;overflow-wrap:break-word;line-height:1.6}
 .menu-grid{grid-template-columns:1fr;gap:.5rem}
-.menu-grid li{padding:.6rem .7rem}
+.menu-grid li{padding:.6rem .7rem;word-break:keep-all;overflow-wrap:break-word;line-height:1.5}
 }
 

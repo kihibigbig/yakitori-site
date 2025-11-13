@@ -78,36 +78,40 @@ ul{list-style:none}
 .nav a:last-child{border-bottom:none}
 .nav a::after{display:none}
 .hero{padding:2rem 0}
+.hero .container{padding:0 1.5rem}
 .hero h2{font-size:1.5rem}
 .hero .lead{font-size:.9rem}
-.container{padding:0 1rem}
+.container{padding:0 1.5rem}
 .section{padding:2rem 0}
-.section .container{padding:0 1rem}
+.section .container{padding:0 1.5rem}
 .section h3{font-size:1.4rem}
-.menu-section{padding:1.3rem;margin-bottom:1rem}
+.menu-section{padding:1.5rem;margin-bottom:1rem}
 .menu-section h4{font-size:1.1rem}
 .menu-columns{grid-template-columns:1fr;gap:1.5rem}
 .menu-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.6rem}
 .menu-grid li{padding:.7rem .8rem;font-size:.85rem}
 }
 @media(max-width:480px){
-.site-header .container{padding:.5rem .8rem;gap:.6rem}
+.site-header .container{padding:.5rem 1rem;gap:.6rem}
 .brand-logo{width:28px;height:28px}
 .brand{font-size:.85rem;white-space:nowrap}
 .brand-sub{font-size:.58rem;white-space:nowrap}
 .menu-toggle{display:block}
 .nav a{font-size:.88rem;padding:.75rem 1rem}
+.container{padding:0 1.25rem}
 .hero{padding:1.5rem 0}
-.hero h2{font-size:1.25rem;margin-bottom:.6rem;line-height:1.5;word-break:keep-all;overflow-wrap:break-word}
-.hero .lead{font-size:.85rem;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+.hero .container{padding:0 1.25rem}
+.hero h2{font-size:1.3rem;margin-bottom:.6rem;line-height:1.5;word-break:keep-all;overflow-wrap:break-word}
+.hero .lead{font-size:.9rem;line-height:1.8;word-break:keep-all;overflow-wrap:break-word}
 .section{padding:1.5rem 0}
-.section h3{font-size:1.25rem;margin-bottom:1rem;word-break:keep-all;overflow-wrap:break-word}
-#access li{word-break:keep-all;overflow-wrap:break-word;line-height:1.7}
-#contact p{word-break:keep-all;overflow-wrap:break-word}
-.menu-section{padding:1rem;border-radius:8px}
-.menu-section h4{font-size:1.05rem;margin-bottom:.8rem;word-break:keep-all;overflow-wrap:break-word}
-.menu-section li{word-break:keep-all;overflow-wrap:break-word;line-height:1.6}
-.menu-grid{grid-template-columns:1fr;gap:.5rem}
-.menu-grid li{padding:.6rem .7rem;word-break:keep-all;overflow-wrap:break-word;line-height:1.5}
+.section .container{padding:0 1.25rem}
+.section h3{font-size:1.3rem;margin-bottom:1rem;word-break:keep-all;overflow-wrap:break-word}
+#access li{word-break:keep-all;overflow-wrap:break-word;line-height:1.8;padding:1rem 1.2rem}
+#contact p{word-break:keep-all;overflow-wrap:break-word;font-size:1rem}
+.menu-section{padding:1.25rem;border-radius:8px}
+.menu-section h4{font-size:1.1rem;margin-bottom:.8rem;word-break:keep-all;overflow-wrap:break-word}
+.menu-section li{word-break:keep-all;overflow-wrap:break-word;line-height:1.7;font-size:.95rem}
+.menu-grid{grid-template-columns:1fr;gap:.6rem}
+.menu-grid li{padding:.8rem 1rem;word-break:keep-all;overflow-wrap:break-word;line-height:1.6;font-size:.9rem}
 }
 

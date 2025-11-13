@@ -1,69 +1,86 @@
-:root{
-  --bg:#faf8f5;
-  --accent:#7a2e1f;
-  --accent-light:#a8594a;
-  --muted:#6b6b6b;
-  --text:#2c2c2c;
-  --shadow:0 2px 8px rgba(122,46,31,.06);
-  --shadow-hover:0 4px 16px rgba(122,46,31,.12);
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue","Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;background:#fff;color:#222;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.site-header{background:#fff;border-bottom:1px solid #e8e8e8;position:sticky;top:0;z-index:1000;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.site-header .container{max-width:1200px;margin:0 auto;padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.branding{display:flex;align-items:center;gap:.6rem}
+.brand-logo{width:40px;height:40px;border-radius:8px;object-fit:cover}
+.brand-text{display:flex;flex-direction:column;gap:.1rem}
+.brand{font-size:1.1rem;font-weight:700;color:#c44;letter-spacing:.02em}
+.brand-sub{font-size:.7rem;color:#888;font-weight:500;text-transform:uppercase;letter-spacing:.08em}
+.nav{display:flex;gap:1.8rem}
+.nav a{font-size:.9rem;color:#444;font-weight:500;transition:color .2s;position:relative}
+.nav a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:#c44;transform:scaleX(0);transition:transform .2s}
+.nav a:hover{color:#c44}
+.nav a:hover::after{transform:scaleX(1)}
+.hero{background:linear-gradient(135deg,#fef9f8 0%,#fff 100%);padding:3rem 0;border-bottom:1px solid #f5f5f5}
+.hero .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.hero h2{font-size:2rem;font-weight:800;color:#c44;line-height:1.4;margin-bottom:.8rem;letter-spacing:.02em}
+.hero .lead{font-size:1rem;color:#666;line-height:1.7;max-width:700px}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.section{padding:3rem 0}
+.section h3{font-size:1.6rem;font-weight:800;color:#c44;margin-bottom:1.5rem;letter-spacing:.02em;position:relative;display:inline-block;padding-bottom:.5rem}
+.section h3::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,#c44 0%,transparent 100%)}
+.menu-intro{color:#666;margin-bottom:2rem;font-size:.95rem}
+.menu-section{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:1.8rem;margin-bottom:1.5rem;transition:box-shadow .2s}
+.menu-section:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.menu-section h4{font-size:1.2rem;font-weight:700;color:#333;margin-bottom:1rem;letter-spacing:.01em}
+.menu-section h5{font-size:1rem;font-weight:600;color:#555;margin:1.2rem 0 .6rem}
+.menu-section ul{padding-left:0}
+.menu-section li{color:#555;margin:.5rem 0;font-size:.92rem;padding-left:1.2rem;position:relative}
+.menu-section li::before{content:'•';position:absolute;left:0;color:#c44;font-weight:700}
+.menu-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.8rem;padding:0}
+.menu-grid li{background:#fafafa;border:1px solid #e8e8e8;border-radius:8px;padding:.8rem 1rem;font-size:.9rem;color:#444;transition:all .2s}
+.menu-grid li::before{display:none}
+.menu-grid li:hover{background:#fff;border-color:#c44;color:#c44;transform:translateY(-2px)}
+.menu-grid.drinks li{display:flex;justify-content:space-between}
+.menu-note{font-size:.85rem;color:#888;margin-top:1rem;font-style:italic}
+#access ul{padding:0}
+#access li{background:#fafafa;border-left:3px solid #c44;padding:.8rem 1rem;margin:.6rem 0;border-radius:4px;font-size:.92rem}
+#access li::before{display:none}
+#access strong{color:#c44;font-weight:600;display:inline-block;min-width:120px}
+.access-note{color:#c44;font-weight:600;display:block;margin-top:1rem}
+#contact p{color:#555;margin:.8rem 0;line-height:1.8}
+.site-footer{background:#f8f8f8;border-top:1px solid #e8e8e8;padding:2rem 1.5rem;text-align:center;margin-top:4rem}
+.site-footer small{color:#888;font-size:.85rem}
+@media(max-width:768px){
+.site-header .container{padding:.6rem 1rem}
+.branding{gap:.5rem}
+.brand-logo{width:32px;height:32px}
+.brand{font-size:.95rem}
+.brand-sub{font-size:.65rem}
+.nav{gap:1rem}
+.nav a{font-size:.85rem}
+.hero{padding:2rem 0}
+.hero h2{font-size:1.5rem}
+.hero .lead{font-size:.9rem}
+.container{padding:0 1rem}
+.section{padding:2rem 0}
+.section h3{font-size:1.4rem}
+.menu-section{padding:1.3rem;margin-bottom:1rem}
+.menu-section h4{font-size:1.1rem}
+.menu-columns{grid-template-columns:1fr;gap:1.5rem}
+.menu-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.6rem}
+.menu-grid li{padding:.7rem .8rem;font-size:.85rem}
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP',Meiryo,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.65;opacity:0;animation:fadeIn .6s ease-in forwards;-webkit-font-smoothing:antialiased}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline;color:var(--accent-light)}
-.container{max-width:1100px;margin:0 auto;padding:1rem}
-.site-header{background:rgba(255,255,255,.98);backdrop-filter:blur(8px);padding:.4rem 0;border-bottom:1px solid rgba(122,46,31,.12);box-shadow:var(--shadow);position:sticky;top:0;z-index:100;animation:slideDown .5s ease-out}
-@keyframes slideDown{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
-.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.branding{display:flex;align-items:center;gap:.7rem;cursor:pointer;transition:transform .3s}
-.branding:hover{transform:scale(1.02)}
-.brand-logo{width:44px;height:auto;border-radius:8px;object-fit:cover;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
-.brand-logo:hover{transform:scale(1.05);box-shadow:var(--shadow-hover)}
-.brand-text{display:flex;flex-direction:column;gap:.15rem}
-.brand{margin:0;color:var(--accent);font-size:1.1rem;font-weight:700;letter-spacing:.3px}
-.brand-sub{margin:0;font-size:.6rem;color:var(--muted);font-weight:500;letter-spacing:.5px;text-transform:uppercase;opacity:.85}
-.nav{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
-.nav a{color:var(--text);font-size:.88rem;font-weight:500;padding:.3rem .1rem;border-bottom:2px solid transparent;transition:all .3s;position:relative}
-.nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
-.nav a:hover{color:var(--accent);text-decoration:none}
-.nav a:hover::after{width:100%}
-.hero{padding:2.5rem 0;background:linear-gradient(135deg,rgba(122,46,31,.06) 0%,rgba(168,89,74,.03) 100%);animation:fadeInUp .8s ease-out .2s both}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.hero h2{margin:.5rem 0 1rem;color:var(--accent);font-size:1.9rem;line-height:1.3}
-.hero .lead{color:var(--muted);max-width:75%;font-size:1.05rem;margin:.5rem 0 0}
-.section{padding:2.5rem 0;animation:fadeInUp .8s ease-out both}
-.section h3{margin:0 0 1.5rem;font-size:1.5rem;color:var(--accent);padding-bottom:.75rem;border-bottom:2px solid var(--accent-light);position:relative;display:inline-block}
-.section h3::after{content:'';position:absolute;bottom:-2px;left:0;height:2px;background:var(--accent-light);animation:slideRight .6s ease-out}
-@keyframes slideRight{from{width:0}to{width:100%}}
-.menu-intro{color:var(--muted);margin-top:0;font-size:.95rem;opacity:0;animation:fadeIn .6s ease-out .3s forwards}
-.menu-section{background:#fff;padding:1.8rem;border-radius:12px;box-shadow:var(--shadow);margin-top:1.5rem;border-left:3px solid var(--accent);transition:all .35s cubic-bezier(.25,.46,.45,.94);animation:fadeInUp .6s ease-out both}
-.menu-section:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
-.menu-section h4{margin:0 0 1rem;color:var(--accent);font-size:1.15rem;font-weight:700;letter-spacing:.3px;transition:color .3s}
-.menu-section:hover h4{color:var(--accent-light)}
-.menu-section h5{margin:1.5rem 0 .6rem;font-size:1rem;color:var(--text);font-weight:600}
-.menu-section ul{margin:.5rem 0 0;padding-left:1.2rem}
-.menu-section li{margin:.4rem 0;color:var(--text);line-height:1.6;transition:transform .2s,color .2s}
-.menu-section li:hover{transform:translateX(4px);color:var(--accent)}
-.menu-columns{display:flex;flex-wrap:wrap;gap:2rem}
-.menu-columns>div{flex:1 1 280px}
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;list-style:none;padding:0;margin:1rem 0 0}
-.menu-grid li{background:rgba(122,46,31,.04);padding:.7rem .9rem;border-radius:8px;border-left:2px solid var(--accent-light);font-size:.92rem;line-height:1.5;transition:all .25s;cursor:pointer}
-.menu-grid li:hover{background:rgba(122,46,31,.08);transform:translateY(-1px);box-shadow:var(--shadow)}
-.menu-grid.drinks li{display:flex;justify-content:space-between;gap:.75rem}
-.menu-note{font-size:.9rem;color:var(--muted);margin:1rem 0 0;font-style:italic;opacity:.8}
-.access-note{color:var(--accent);font-weight:500;display:inline-block;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
-#access ul{list-style:none;padding:0;display:grid;gap:.75rem}
-#access li{padding:.75rem;background:#fff;border-radius:10px;border-left:3px solid var(--accent-light);transition:all .3s}
-#access li:hover{transform:translateX(4px);box-shadow:0 4px 12px rgba(166,61,42,.1)}
-#access strong{color:var(--accent);min-width:100px;display:inline-block;font-weight:600}
-#contact p{animation:fadeInUp .8s ease-out both}
-#contact p:nth-of-type(1){animation-delay:.1s}
-#contact p:nth-of-type(2){animation-delay:.2s}
-.site-footer{background:#fff;padding:1.5rem 1rem;border-top:2px solid var(--accent);text-align:center;margin-top:3rem;animation:fadeInUp .8s ease-out .5s both}
-.site-footer small{color:var(--muted);font-size:.9rem}
-@media(max-width:900px){.hero{padding:3rem 0}.hero h2{font-size:1.5rem}.hero .lead{max-width:100%;font-size:1rem}}
-@media(max-width:700px){.site-header{padding:.3rem 0}.site-header .container{flex-direction:row;align-items:center;gap:.5rem;padding:.5rem 1rem}.branding{gap:.5rem}.brand-logo{width:36px;border-radius:6px}.brand{font-size:.95rem;font-weight:700}.brand-sub{font-size:.55rem}.nav{gap:.6rem;font-size:.82rem}.nav a{padding:.25rem .08rem;font-size:.82rem}.hero{padding:1.8rem 0}.hero h2{font-size:1.2rem;margin:.3rem 0 .7rem}.hero .lead{font-size:.92rem}.section{padding:1.5rem 0}.section h3{font-size:1.3rem;margin-bottom:1rem}.menu-section{padding:1.2rem;margin-top:1rem;border-radius:10px}.menu-section h4{font-size:1.05rem;margin-bottom:.8rem}.menu-grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.5rem}.menu-grid li{padding:.6rem .8rem;font-size:.88rem;border-radius:6px}}
+@media(max-width:480px){
+.site-header .container{padding:.5rem .8rem;gap:.8rem}
+.brand-logo{width:28px;height:28px}
+.brand{font-size:.88rem}
+.brand-sub{font-size:.6rem}
+.nav{gap:.7rem}
+.nav a{font-size:.8rem}
+.hero{padding:1.5rem 0}
+.hero h2{font-size:1.3rem;margin-bottom:.6rem}
+.hero .lead{font-size:.85rem}
+.section{padding:1.5rem 0}
+.section h3{font-size:1.25rem;margin-bottom:1rem}
+.menu-section{padding:1rem;border-radius:8px}
+.menu-section h4{font-size:1.05rem;margin-bottom:.8rem}
+.menu-grid{grid-template-columns:1fr;gap:.5rem}
+.menu-grid li{padding:.6rem .7rem}
+}
 

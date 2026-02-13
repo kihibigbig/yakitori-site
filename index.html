@@ -3,751 +3,888 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="所沢市小手指のテイクアウト専門焼き鳥店。フランス修行経験を活かしたこだわりの焼き鳥、90円均一～プレミアム串まで。事前予約で待ち時間なし。">
-  <title>焼き鳥 ししとう - 所沢・小手指のテイクアウト専門店</title>
-  
-  <!-- Google Fonts -->
+  <meta name="description" content="所沢市上新井のテイクアウト専門焼き鳥店「ししとう」。一本90円の本格焼きとりから、お弁当・お惣菜・プレミアム串まで。毎日11:30〜21:00営業中。">
+  <title>焼き鳥 ししとう｜所沢・上新井のテイクアウト専門店</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
-  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
   <style>
-    :root {
-      /* カラーパレット: 深みのある赤、炭色、オフホワイト、ゴールド */
-      --primary-color: #8a1c1c; /* 落ち着いた茜色 */
-      --primary-dark: #5e1212;
-      --accent-color: #c5a059; /* ゴールド/和からし色 */
-      --text-main: #2c2c2c;
-      --text-light: #f9f9f9;
-      --bg-body: #fbfbfb;
-      --bg-section: #ffffff;
-      --font-sans: "Noto Sans JP", sans-serif;
-      --font-serif: "Shippori Mincho", "Noto Serif JP", serif;
-      --spacing-section: 5rem;
-      --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
-      --shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+    :root{
+      --crimson:#8B1A2B;--crimson-dark:#6B0F1E;--crimson-light:#A8293E;
+      --gold:#C9A96E;--gold-light:#E8D5A8;--gold-pale:#F5EDD8;
+      --bg:#FAF9F7;--bg-warm:#F3F0EA;--white:#fff;
+      --dark:#1A1A1A;--dark-soft:#2D2D2D;
+      --text:#333;--text-muted:#777;--text-light:#aaa;
+      --serif:'Shippori Mincho','Noto Serif JP',serif;
+      --sans:'Noto Sans JP',sans-serif;
+      --shadow:0 4px 24px rgba(0,0,0,.06);
+      --shadow-md:0 8px 32px rgba(0,0,0,.10);
+      --shadow-lg:0 16px 48px rgba(0,0,0,.14);
+      --radius:10px;--radius-lg:16px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;font-size:16px;}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;transition:all .3s;}
+    ul{list-style:none;}
+    img{max-width:100%;display:block;}
+    .container{max-width:1100px;margin:0 auto;padding:0 1.25rem;}
+    .serif{font-family:var(--serif);}
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+
+    /* ===== HEADER ===== */
+    .header{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all .4s;}
+    .header--top{background:transparent;}
+    .header--scrolled{background:rgba(26,26,26,.96);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.15);}
+    .header .container{display:flex;justify-content:space-between;align-items:center;height:64px;}
+    .brand{display:flex;align-items:center;gap:.7rem;}
+    .brand-logo{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.2);}
+    .header--scrolled .brand-logo{border-color:var(--gold);}
+    .brand-name{font-family:var(--serif);font-size:1.15rem;color:#fff;font-weight:700;letter-spacing:.06em;}
+    .brand-sub{font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:.12em;margin-top:1px;}
+    .nav-desktop{display:none;gap:1.8rem;}
+    .nav-desktop a{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.75);letter-spacing:.04em;position:relative;}
+    .nav-desktop a:hover{color:var(--gold);}
+    .nav-desktop a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold);transition:width .3s;}
+    .nav-desktop a:hover::after{width:100%;}
+    .nav-cta{display:inline-block;padding:.45rem 1.2rem;background:var(--crimson);color:#fff!important;border-radius:50px;font-size:.8rem;font-weight:600;opacity:1!important;}
+    .nav-cta:hover{background:var(--crimson-light);transform:translateY(-1px);}
+    .nav-cta::after{display:none!important;}
+    @media(min-width:768px){.nav-desktop{display:flex;align-items:center;}.hamburger{display:none!important;}}
+
+    /* Hamburger */
+    .hamburger{width:28px;height:20px;position:relative;cursor:pointer;background:none;border:none;z-index:1002;}
+    .hamburger span{display:block;position:absolute;height:2px;width:100%;background:#fff;transition:.3s ease-in-out;}
+    .hamburger span:nth-child(1){top:0;}
+    .hamburger span:nth-child(2){top:9px;}
+    .hamburger span:nth-child(3){top:18px;}
+    .hamburger.open span:nth-child(1){top:9px;transform:rotate(135deg);background:var(--gold);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){top:9px;transform:rotate(-135deg);background:var(--gold);}
+
+    .nav-mobile{position:fixed;top:0;right:0;bottom:0;width:80%;max-width:300px;background:var(--dark);z-index:1001;padding:5rem 2rem;transform:translateX(100%);transition:transform .4s cubic-bezier(.77,.2,.05,1);}
+    .nav-mobile.open{transform:translateX(0);}
+    .nav-mobile a{display:block;padding:.9rem 0;font-size:1rem;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.08);}
+    .nav-mobile a:hover{color:var(--gold);}
+    .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s;}
+    .nav-overlay.open{opacity:1;pointer-events:all;}
+
+    /* ===== HERO ===== */
+    .hero{position:relative;min-height:100vh;min-height:100svh;background:var(--dark);display:flex;align-items:center;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 50%,#0a0a0a 100%);}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(139,26,43,.15) 0%,transparent 60%);}
+    .hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding-top:80px;padding-bottom:40px;}
+    .hero-text{color:#fff;}
+    .hero-badge{display:inline-block;font-size:.7rem;font-weight:600;color:var(--gold);letter-spacing:.2em;border:1px solid rgba(201,169,110,.3);padding:.35rem 1rem;border-radius:50px;margin-bottom:1.5rem;text-transform:uppercase;}
+    .hero h2{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.4;margin-bottom:1.2rem;color:#fff;}
+    .hero h2 em{font-style:normal;color:var(--gold);}
+    .hero-desc{font-size:1rem;color:rgba(255,255,255,.65);line-height:2;margin-bottom:2rem;}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:50px;font-size:.9rem;font-weight:600;transition:all .3s;cursor:pointer;border:none;}
+    .btn-gold{background:var(--gold);color:var(--dark);}
+    .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,169,110,.3);}
+    .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25);}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+    .hero-visual{position:relative;display:flex;justify-content:center;}
+    .hero-img-main{width:85%;max-width:400px;border-radius:var(--radius-lg);box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.05);}
+    .hero-img-float{position:absolute;width:45%;max-width:180px;border-radius:var(--radius);box-shadow:0 20px 50px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.05);}
+    .hero-img-float--1{bottom:-10%;left:-5%;animation:float 6s ease-in-out infinite;}
+    .hero-img-float--2{top:-5%;right:-5%;animation:float 6s ease-in-out infinite 3s;}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+    @media(max-width:768px){
+      .hero .container{grid-template-columns:1fr;text-align:center;padding-top:100px;}
+      .hero-visual{order:-1;margin-bottom:1rem;}
+      .hero-img-main{width:60%;max-width:260px;}
+      .hero-img-float{width:35%;max-width:120px;}
+      .hero-img-float--1{bottom:0;left:5%;}
+      .hero-img-float--2{top:0;right:5%;}
+      .hero-actions{justify-content:center;}
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    html { scroll-behavior: smooth; font-size: 16px; }
-    
-    body {
-      font-family: var(--font-sans);
-      background-color: var(--bg-body);
-      color: var(--text-main);
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
+    /* ===== HIGHLIGHTS ===== */
+    .highlights{position:relative;z-index:10;margin-top:-3rem;}
+    .highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);}
+    .highlight-card{padding:2rem 1.5rem;text-align:center;background:var(--white);transition:all .3s;}
+    .highlight-card:hover{background:var(--gold-pale);}
+    .highlight-num{font-family:var(--serif);font-size:2.2rem;font-weight:800;color:var(--crimson);line-height:1;}
+    .highlight-unit{font-size:.9rem;color:var(--crimson);}
+    .highlight-label{font-size:.85rem;color:var(--text-muted);margin-top:.4rem;}
+    @media(max-width:600px){.highlights-grid{grid-template-columns:1fr;}.highlight-card{padding:1.2rem;display:flex;align-items:center;gap:1rem;text-align:left;}.highlight-card>div:first-child{min-width:80px;}}
 
-    a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-    ul { list-style: none; }
-    img { max-width: 100%; display: block; }
+    /* ===== SECTION COMMON ===== */
+    .section{padding:5rem 0;}
+    .section-label{display:block;font-size:.75rem;font-weight:600;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem;text-align:center;}
+    .section-title{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);text-align:center;margin-bottom:.8rem;font-weight:700;color:var(--dark);}
+    .section-desc{text-align:center;color:var(--text-muted);max-width:600px;margin:0 auto 3rem;font-size:.95rem;}
 
-    /* --- Utility --- */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-    .text-center { text-align: center; }
-    .serif { font-family: var(--font-serif); }
-    
-    /* アニメーション用クラス */
-    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    /* ===== ABOUT ===== */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
+    .about-img-wrap{position:relative;}
+    .about-img{border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);width:100%;aspect-ratio:4/3;object-fit:cover;}
+    .about-img-accent{position:absolute;bottom:-1.5rem;right:-1.5rem;width:40%;border-radius:var(--radius);box-shadow:var(--shadow-md);border:4px solid var(--bg);}
+    .about-text h3{font-family:var(--serif);font-size:1.6rem;line-height:1.6;margin-bottom:1.5rem;position:relative;padding-left:1.2rem;}
+    .about-text h3::before{content:'';position:absolute;left:0;top:.3rem;bottom:.3rem;width:3px;background:var(--gold);border-radius:2px;}
+    .about-text p{color:#555;margin-bottom:1rem;font-size:.95rem;}
+    .about-text p strong{color:var(--crimson);}
+    @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem;}.about-img-accent{width:35%;bottom:-1rem;right:-1rem;}}
 
-    /* --- Header --- */
-    .site-header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-      transition: all 0.3s;
-    }
-    .site-header .container {
-      display: flex; justify-content: space-between; align-items: center;
-      height: 70px;
-    }
-    
-    .branding { display: flex; align-items: center; gap: 0.8rem; }
-    .brand-logo-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
-    
-    .brand-text h1 {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--primary-color);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      line-height: 1;
-    }
-    .brand-sub { font-size: 0.7rem; color: #888; letter-spacing: 0.1em; margin-top: 3px; }
+    /* ===== MENU SECTION ===== */
+    .menu-section{background:var(--bg-warm);}
 
-    /* Navigation */
-    .nav-desktop { display: none; gap: 2rem; }
-    .nav-desktop a {
-      font-size: 0.9rem; font-weight: 500; color: #555; position: relative;
-    }
-    .nav-desktop a::after {
-      content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 1px;
-      background: var(--primary-color); transition: width 0.3s;
-    }
-    .nav-desktop a:hover { color: var(--primary-color); }
-    .nav-desktop a:hover::after { width: 100%; }
+    /* Menu Nav (Tab Buttons) */
+    .menu-nav{display:flex;justify-content:center;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+    .menu-nav-btn{padding:.6rem 1.4rem;border:1.5px solid #ddd;border-radius:50px;font-size:.85rem;font-weight:500;background:var(--white);color:var(--text);cursor:pointer;transition:all .3s;font-family:var(--sans);}
+    .menu-nav-btn:hover{border-color:var(--crimson);color:var(--crimson);}
+    .menu-nav-btn.active{background:var(--crimson);color:#fff;border-color:var(--crimson);}
 
-    @media(min-width: 768px) { .nav-desktop { display: flex; } .menu-toggle { display: none; } }
+    /* Menu Tab Content */
+    .menu-tab{display:none;}
+    .menu-tab.active{display:block;}
 
-    /* Mobile Menu Toggle */
-    .menu-toggle {
-      width: 30px; height: 20px; position: relative; cursor: pointer; z-index: 1002; background: none; border: none;
-    }
-    .menu-toggle span {
-      display: block; position: absolute; height: 2px; width: 100%; background: var(--text-main);
-      transition: .25s ease-in-out;
-    }
-    .menu-toggle span:nth-child(1) { top: 0px; }
-    .menu-toggle span:nth-child(2) { top: 9px; }
-    .menu-toggle span:nth-child(3) { top: 18px; }
-    .menu-toggle.open span:nth-child(1) { top: 9px; transform: rotate(135deg); background: var(--primary-color); }
-    .menu-toggle.open span:nth-child(2) { opacity: 0; left: -60px; }
-    .menu-toggle.open span:nth-child(3) { top: 9px; transform: rotate(-135deg); background: var(--primary-color); }
+    /* Menu Group */
+    .menu-group{margin-bottom:3rem;}
+    .menu-group-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:.8rem;border-bottom:2px solid var(--gold-light);}
+    .menu-group-title{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--dark);}
+    .menu-group-price{font-size:.85rem;font-weight:600;color:var(--crimson);background:rgba(139,26,43,.08);padding:.25rem .8rem;border-radius:50px;white-space:nowrap;}
 
-    .nav-mobile {
-      position: fixed; top: 0; right: 0; bottom: 0; width: 80%; max-width: 300px;
-      background: white; z-index: 1001; padding: 5rem 2rem;
-      transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77,0.2,0.05,1.0);
-      box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-    }
-    .nav-mobile.open { transform: translateX(0); }
-    .nav-mobile a { display: block; padding: 1rem 0; font-size: 1.1rem; border-bottom: 1px solid #eee; }
-    .nav-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);
-      z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s;
-    }
-    .nav-overlay.open { opacity: 1; pointer-events: all; }
+    /* Menu Card with Photo */
+    .menu-photo-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);margin-bottom:2rem;}
+    .menu-photo-card img{width:100%;height:100%;object-fit:cover;min-height:250px;}
+    .menu-photo-card .menu-card-body{padding:2rem;}
+    @media(max-width:768px){.menu-photo-card{grid-template-columns:1fr;}.menu-photo-card img{max-height:220px;}}
 
-    /* --- Hero Section --- */
-    .hero {
-      position: relative;
-      height: 85vh; min-height: 600px;
-      background-image: url('https://images.unsplash.com/photo-1542359586-4237553547f7?q=80&w=2070&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      display: flex; align-items: center; justify-content: center;
-      color: white;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(44,44,44,0.4) 100%);
-    }
-    .hero-content {
-      position: relative; z-index: 1; text-align: center; padding: 0 1rem; max-width: 800px;
-    }
-    .hero-tagline {
-      font-family: var(--font-serif);
-      font-size: 1.1rem; letter-spacing: 0.2em; margin-bottom: 1.5rem; color: var(--accent-color);
-      text-transform: uppercase; display: inline-block; position: relative;
-    }
-    .hero-tagline::before, .hero-tagline::after {
-      content: ''; position: absolute; top: 50%; width: 40px; height: 1px; background: var(--accent-color);
-    }
-    .hero-tagline::before { left: -50px; }
-    .hero-tagline::after { right: -50px; }
+    /* Menu Items Grid */
+    .menu-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;}
+    .menu-card{background:var(--white);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);transition:all .3s;border:1px solid transparent;}
+    .menu-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--gold-light);}
+    .menu-card h4{font-family:var(--serif);font-size:1.1rem;color:var(--dark);margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;padding-bottom:.6rem;border-bottom:1px solid #eee;}
+    .menu-card .price-badge{font-size:.8rem;font-weight:700;color:var(--crimson);background:rgba(139,26,43,.06);padding:.2rem .6rem;border-radius:4px;white-space:nowrap;}
 
-    .hero h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 700; line-height: 1.3; margin-bottom: 1.5rem;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .hero-desc {
-      font-size: 1.1rem; margin-bottom: 2.5rem; opacity: 0.9; line-height: 1.8;
-    }
-    
-    .btn-primary {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      background-color: var(--primary-color);
-      color: white;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-      border: 1px solid transparent;
-    }
-    .btn-primary:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
+    /* Premium Card */
+    .menu-card.premium{background:linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 100%);color:#fff;border:1px solid rgba(201,169,110,.3);}
+    .menu-card.premium h4{color:var(--gold);border-bottom-color:rgba(255,255,255,.1);}
+    .menu-card.premium .price-badge{background:var(--gold);color:var(--dark);}
+    .menu-card.premium .menu-list li{color:rgba(255,255,255,.8);}
+    .menu-card.premium .menu-list li::before{color:var(--gold);}
 
-    /* --- Features (Badges) --- */
-    .features-bar {
-      background: var(--bg-section);
-      padding: 3rem 0;
-      border-bottom: 1px solid #eee;
-      margin-top: -3rem; /* Pull up slightly */
-      position: relative; z-index: 10;
-      border-radius: 20px 20px 0 0;
-      box-shadow: 0 -10px 20px rgba(0,0,0,0.03);
-    }
-    .features-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;
-    }
-    .feature-item {
-      display: flex; flex-direction: column; align-items: center; text-align: center;
-      padding: 1.5rem;
-    }
-    .feature-icon {
-      font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem;
-      background: #fdf2f2; /* 落ち着いた背景色 */
-      width: 70px; height: 70px; line-height: 70px; border-radius: 50%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    .feature-item h3 { font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 0.5rem; }
-    .feature-item p { font-size: 0.9rem; color: #666; }
+    .menu-list li{position:relative;padding-left:1rem;margin-bottom:.5rem;font-size:.92rem;display:flex;justify-content:space-between;align-items:baseline;}
+    .menu-list li::before{content:'●';position:absolute;left:0;top:.15em;font-size:.4rem;color:var(--gold);}
+    .menu-list li .item-price{font-weight:700;color:var(--crimson);white-space:nowrap;margin-left:1rem;}
 
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
-      vertical-align: middle;
-      font-size: 2.5rem;
-    }
+    /* Tag Grid (for dips, snacks) */
+    .tag-grid{display:flex;flex-wrap:wrap;gap:.5rem;}
+    .tag{display:inline-block;padding:.35rem .8rem;background:var(--white);border:1px solid #e0e0e0;border-radius:50px;font-size:.82rem;color:var(--text);transition:all .2s;}
+    .tag:hover{border-color:var(--gold);background:var(--gold-pale);}
 
-    /* --- Section Styling --- */
-    .section { padding: var(--spacing-section) 0; }
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      color: var(--text-main);
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    .section-subtitle {
-      text-align: center; color: #888; margin-bottom: 3rem; font-size: 0.95rem;
-    }
-    .section-title span {
-      display: block; font-size: 1rem; color: var(--primary-color); margin-bottom: 0.5rem; letter-spacing: 0.1em;
-    }
+    /* Compact List (for sides) */
+    .compact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.8rem;}
+    .compact-item{background:var(--white);padding:.7rem 1rem;border-radius:8px;font-size:.9rem;display:flex;justify-content:space-between;align-items:center;border:1px solid #eee;}
+    .compact-item .cp-price{font-weight:700;color:var(--crimson);font-size:.85rem;}
 
-    /* --- About Section --- */
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
-    }
-    .about-image img {
-      border-radius: 10px; box-shadow: var(--shadow-card);
-      width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover;
-    }
-    .about-text h3 {
-      font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1.5rem;
-      border-left: 4px solid var(--primary-color); padding-left: 1rem; line-height: 1.4;
-    }
-    .about-text p { margin-bottom: 1rem; color: #555; }
-    @media(max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+    /* Menu Note */
+    .menu-note{font-size:.82rem;color:var(--text-muted);background:rgba(201,169,110,.08);padding:.6rem 1rem;border-radius:6px;margin-top:.8rem;line-height:1.6;}
+    .menu-note strong{color:var(--crimson);}
 
-    /* --- Menu Section --- */
-    .menu-wrapper { background: #f4f4f4; }
-    
-    .menu-category-title {
-      text-align: center; font-family: var(--font-serif); font-size: 1.5rem;
-      margin: 3rem 0 1.5rem; position: relative; display: inline-block; left: 50%; transform: translateX(-50%);
-      padding-bottom: 0.5rem;
-    }
-    .menu-category-title::after {
-      content: ''; position: absolute; bottom: 0; left: 25%; width: 50%; height: 2px; background: var(--accent-color);
-    }
+    /* ===== GALLERY ===== */
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;}
+    .gallery-item{position:relative;overflow:hidden;border-radius:var(--radius);aspect-ratio:1;cursor:pointer;}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .gallery-item:hover img{transform:scale(1.08);}
+    .gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.4) 0%,transparent 50%);opacity:0;transition:opacity .3s;}
+    .gallery-item:hover::after{opacity:1;}
+    .gallery-item span{position:absolute;bottom:.8rem;left:.8rem;color:#fff;font-size:.8rem;font-weight:500;z-index:2;opacity:0;transform:translateY(6px);transition:all .3s;}
+    .gallery-item:hover span{opacity:1;transform:translateY(0);}
+    @media(max-width:600px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
 
-    /* Menu Cards Grid */
-    .menu-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
+    /* ===== ACCESS ===== */
+    .access-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);}
+    .access-card-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+    .access-info{padding:2.5rem;}
+    .access-info h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:1.5rem;color:var(--dark);}
+    .access-table{width:100%;border-collapse:collapse;}
+    .access-table tr{border-bottom:1px solid #f0f0f0;}
+    .access-table th{text-align:left;padding:.9rem 0;font-weight:600;color:var(--crimson);font-size:.85rem;width:90px;vertical-align:top;}
+    .access-table td{padding:.9rem 0;font-size:.92rem;color:var(--text);}
+    .access-table a{color:var(--crimson);font-weight:600;}
+    .access-table a:hover{text-decoration:underline;}
+    .access-visual{position:relative;background:var(--dark);display:flex;align-items:center;justify-content:center;min-height:300px;}
+    .access-visual img{width:100%;height:100%;object-fit:cover;opacity:.8;}
+    .access-map-btn{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--white);color:var(--dark);padding:.6rem 1.5rem;border-radius:50px;font-weight:600;font-size:.85rem;box-shadow:0 4px 16px rgba(0,0,0,.2);display:flex;align-items:center;gap:.4rem;white-space:nowrap;}
+    .access-map-btn:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25);}
+    @media(max-width:768px){.access-card-inner{grid-template-columns:1fr;}.access-info{padding:1.5rem;}}
 
-    .menu-card {
-      background: white; border-radius: 12px; padding: 2rem;
-      box-shadow: var(--shadow-card); transition: all 0.3s;
-      position: relative; overflow: hidden;
-      border: 1px solid transparent;
-    }
-    .menu-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    /* ===== FAQ ===== */
+    .faq-item{background:var(--white);margin-bottom:.8rem;border-radius:var(--radius);border:1px solid #eee;overflow:hidden;transition:all .3s;}
+    .faq-item[open]{box-shadow:var(--shadow);border-color:var(--gold-light);}
+    .faq-item summary{padding:1.2rem 3rem 1.2rem 1.2rem;font-weight:600;cursor:pointer;list-style:none;position:relative;font-size:.95rem;}
+    .faq-item summary::-webkit-details-marker{display:none;}
+    .faq-item summary::after{content:'+';position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--gold);font-weight:300;transition:transform .3s;}
+    .faq-item[open] summary::after{transform:translateY(-50%) rotate(45deg);}
+    .faq-answer{padding:0 1.2rem 1.2rem;color:#666;font-size:.92rem;line-height:1.9;}
 
-    .menu-card h4 {
-      font-size: 1.1rem; font-weight: 700; margin-bottom: 1.2rem;
-      color: var(--primary-color); border-bottom: 1px solid #eee; padding-bottom: 0.8rem;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .menu-price-tag {
-      font-size: 0.9rem; background: #eee; padding: 2px 8px; border-radius: 4px; color: #555;
-    }
+    /* ===== CTA ===== */
+    .cta-section{background:linear-gradient(135deg,var(--dark) 0%,#2a1a1e 100%);color:#fff;text-align:center;padding:4rem 0;}
+    .cta-section h3{font-family:var(--serif);font-size:1.8rem;margin-bottom:1rem;color:var(--gold-light);}
+    .cta-section p{color:rgba(255,255,255,.6);margin-bottom:2rem;font-size:.95rem;}
+    .cta-phone{font-family:var(--serif);font-size:2.5rem;font-weight:700;color:#fff;display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1rem;}
+    .cta-phone .material-symbols-outlined{font-size:2rem;color:var(--gold);}
+    .btn-cta{display:inline-flex;align-items:center;gap:.5rem;padding:1rem 2.5rem;background:var(--crimson);color:#fff;border-radius:50px;font-size:1rem;font-weight:700;transition:all .3s;}
+    .btn-cta:hover{background:var(--crimson-light);transform:translateY(-2px);box-shadow:0 10px 30px rgba(139,26,43,.4);}
+    .btn-cta .material-symbols-outlined{font-size:1.2rem;}
 
-    /* Premium Menu Special Styling */
-    .menu-card.premium {
-      background: #222; color: #fff; border: 1px solid var(--accent-color);
-    }
-    .menu-card.premium h4 { color: var(--accent-color); border-bottom-color: rgba(255,255,255,0.2); }
-    .menu-card.premium .menu-price-tag { background: var(--accent-color); color: #222; font-weight: bold; }
-    .menu-card.premium li::before { color: var(--accent-color); }
+    /* ===== FOOTER ===== */
+    .footer{background:var(--dark);color:rgba(255,255,255,.5);padding:3rem 0 1.5rem;font-size:.85rem;}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08);}
+    .footer-brand{display:flex;align-items:center;gap:.7rem;}
+    .footer-brand img{width:36px;height:36px;border-radius:50%;object-fit:cover;}
+    .footer-brand h4{color:#fff;font-family:var(--serif);font-size:1.1rem;}
+    .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+    .footer-links a{color:rgba(255,255,255,.5);font-size:.82rem;transition:color .3s;}
+    .footer-links a:hover{color:var(--gold);}
+    .copyright{text-align:center;font-size:.75rem;color:rgba(255,255,255,.3);}
 
-    .menu-list { padding-left: 0; }
-    .menu-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.8rem; font-size: 0.95rem;
-      position: relative; padding-left: 15px;
-      word-break: break-word; /* 長い単語の折り返し */
-    }
-    .menu-list li span:first-child { flex-grow: 1; margin-right: 10px; }
-    .menu-list li span:last-child { white-space: nowrap; font-weight: bold; }
+    /* ===== MATERIAL ICONS ===== */
+    .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;}
 
-    .menu-list li::before {
-      content: '◆'; position: absolute; left: 0; top: 2px; font-size: 0.6rem; color: var(--primary-color);
-    }
-    
-    /* Simple Grid for shorter items */
-    .menu-list.simple-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 0.5rem 1rem;
-    }
-    .menu-list.simple-grid li {
-      display: block;
-      margin-bottom: 0;
-      padding-left: 15px;
-      white-space: normal;
-    }
-    .menu-list.simple-grid li::before { top: 7px; }
-
-    /* Drink & Snacks Grid */
-    .mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.8rem; }
-    .mini-item {
-      background: #f9f9f9; padding: 0.8rem; border-radius: 6px; text-align: center; font-size: 0.9rem;
-      border: 1px solid #eee;
-    }
-
-    /* --- Access & Info --- */
-    .access-container {
-      background: white; border-radius: 20px; padding: 3rem;
-      box-shadow: var(--shadow-card);
-      display: flex; flex-wrap: wrap; gap: 2rem;
-      border-top: 4px solid var(--primary-color);
-    }
-    .access-info { flex: 1; min-width: 300px; }
-    .access-info table { width: 100%; border-collapse: collapse; }
-    .access-info th, .access-info td { text-align: left; padding: 1rem 0; border-bottom: 1px solid #eee; }
-    .access-info th { width: 100px; color: var(--primary-color); font-weight: 600; }
-    
-    .access-map { flex: 1; min-width: 300px; background: #eee; min-height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #888; overflow: hidden; position: relative;}
-
-    /* --- FAQ --- */
-    details {
-      background: white; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #eee; overflow: hidden; transition: all 0.3s;
-    }
-    details[open] { box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-color: var(--primary-color); }
-    summary {
-      padding: 1.2rem; font-weight: 600; cursor: pointer; list-style: none; position: relative; padding-right: 3rem;
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary::after {
-      content: '+'; position: absolute; right: 1.2rem; top: 50%; transform: translateY(-50%);
-      font-size: 1.5rem; color: var(--primary-color); transition: transform 0.3s;
-    }
-    details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
-    .faq-content { padding: 0 1.2rem 1.2rem; color: #666; line-height: 1.8; font-size: 0.95rem; }
-
-    /* --- Footer --- */
-    .site-footer {
-      background: #1a1a1a; color: #aaa; padding: 4rem 0 2rem; font-size: 0.9rem;
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem;
-    }
-    .footer-brand h2 { color: white; font-family: var(--font-serif); margin-bottom: 1rem; }
-    .footer-links a { display: block; margin-bottom: 0.8rem; transition: color 0.3s; }
-    .footer-links a:hover { color: white; }
-    .copyright { text-align: center; border-top: 1px solid #333; padding-top: 2rem; font-size: 0.8rem; }
-
-    /* --- Responsive Tweaks --- */
-    @media (max-width: 768px) {
-      .hero h2 { font-size: 2rem; }
-      .section { padding: 3rem 0; }
-      .menu-list.simple-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
-      .access-container { padding: 1.5rem; }
-    }
+    /* ===== UTILITIES ===== */
+    @media(max-width:768px){.section{padding:3.5rem 0;}}
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header" id="header">
+  <!-- ======== HEADER ======== -->
+  <header class="header header--top" id="header">
     <div class="container">
-      <div class="branding">
-        <img src="assets/ロゴ.jpg" alt="焼き鳥 ししとう ロゴ" class="brand-logo-img">
-        <div class="brand-text">
-          <h1>焼き鳥 ししとう</h1>
-          <p class="brand-sub">YAKITORI SHISHITOU</p>
+      <a href="#" class="brand">
+        <img src="assets/ロゴ.jpg" alt="ししとう" class="brand-logo">
+        <div>
+          <div class="brand-name">焼き鳥 ししとう</div>
+          <div class="brand-sub">TAKEOUT YAKITORI</div>
         </div>
-      </div>
-      
+      </a>
       <nav class="nav-desktop">
         <a href="#about">こだわり</a>
         <a href="#menu">お品書き</a>
+        <a href="#gallery">ギャラリー</a>
         <a href="#access">店舗情報</a>
-        <a href="#contact" class="btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.85rem;">ご予約</a>
+        <a href="tel:07091507039" class="nav-cta">📞 電話注文</a>
       </nav>
-
-      <button class="menu-toggle" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
     </div>
   </header>
-
-  <!-- Mobile Nav Overlay -->
   <div class="nav-overlay"></div>
   <nav class="nav-mobile">
     <a href="#about">こだわり</a>
     <a href="#menu">お品書き</a>
+    <a href="#gallery">ギャラリー</a>
     <a href="#access">店舗情報</a>
     <a href="#faq">よくある質問</a>
-    <a href="#contact">お問い合わせ</a>
+    <a href="tel:07091507039">📞 電話する</a>
   </nav>
 
   <main>
-    <!-- Hero Section -->
+    <!-- ======== HERO ======== -->
     <section class="hero">
-      <div class="hero-content fade-up">
-        <span class="hero-tagline">Since 2025</span>
-        <h2>フランス仕込みの<br>繊細な火入れと味わい</h2>
-        <p class="hero-desc">
-          所沢・小手指のテイクアウト専門店。<br>
-          90円の定番串から、フレンチの技が光るプレミアム串まで。<br>
-          食卓に「驚き」と「温もり」をお届けします。
-        </p>
-        <a href="#menu" class="btn-primary">メニューを見る</a>
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div class="hero-text fade-up">
+          <span class="hero-badge">Takeout Specialty</span>
+          <h2>一本<em>90円</em>から。<br>毎日通える、<br>本格焼き鳥。</h2>
+          <p class="hero-desc">
+            所沢・上新井のテイクアウト専門焼き鳥店。<br>
+            定番の焼きとりから、プレミアム串、お弁当、<br>
+            お惣菜まで豊富なラインナップ。
+          </p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-gold">メニューを見る</a>
+            <a href="tel:07091507039" class="btn btn-outline">
+              <span class="material-symbols-outlined" style="font-size:1rem;">call</span>
+              電話注文
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual fade-up">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6052.jpeg" alt="焼き鳥の盛り合わせ" class="hero-img-main">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6495.jpeg" alt="プレミアム串" class="hero-img-float hero-img-float--1">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6083.jpeg" alt="やきとん" class="hero-img-float hero-img-float--2">
+        </div>
       </div>
     </section>
 
-    <!-- Features Bar -->
-    <div class="container">
-      <div class="features-bar fade-up">
-        <div class="features-grid">
-          <div class="feature-item">
-            <div class="feature-icon"><span class="material-symbols-outlined">payments</span></div>
-            <h3>90円から</h3>
-            <p>毎日通えるリーズナブルな価格で<br>本格的な味わいを。</p>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon"><span class="material-symbols-outlined">restaurant_menu</span></div>
-            <h3>フレンチの技法</h3>
-            <p>フランス修行を経た店主による<br>枠にとらわれない創作串。</p>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon"><span class="material-symbols-outlined">schedule</span></div>
-            <h3>事前予約推奨</h3>
-            <p>スマホでサクッと予約。<br>待ち時間ゼロで受け取り。</p>
-          </div>
+    <!-- ======== HIGHLIGHTS ======== -->
+    <div class="container highlights fade-up">
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <div><span class="highlight-num">90</span><span class="highlight-unit">円〜</span></div>
+          <div class="highlight-label">定番焼きとり・串焼き</div>
+        </div>
+        <div class="highlight-card">
+          <div><span class="highlight-num">500</span><span class="highlight-unit">円</span></div>
+          <div class="highlight-label">ボリューム満点のお弁当</div>
+        </div>
+        <div class="highlight-card">
+          <div><span class="highlight-num">11:30</span><span class="highlight-unit">〜21:00</span></div>
+          <div class="highlight-label">毎日通し営業・電話注文OK</div>
         </div>
       </div>
     </div>
 
-    <!-- About Section -->
+    <!-- ======== ABOUT ======== -->
     <section id="about" class="section">
       <div class="container">
-        <div class="section-title fade-up">
-          <span>PHILOSOPHY</span>
-          こだわり
-        </div>
+        <span class="section-label fade-up">About Us</span>
+        <h2 class="section-title fade-up">ししとうのこだわり</h2>
         <div class="about-grid fade-up">
-          <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1551025526-a9c00b0c5344?q=80&w=1780&auto=format&fit=crop" alt="焼き鳥の調理風景">
+          <div class="about-img-wrap">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6052.jpeg" alt="焼き鳥盛り合わせ" class="about-img">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6495.jpeg" alt="プレミアム串" class="about-img-accent">
           </div>
           <div class="about-text">
-            <h3>「いつもの焼き鳥」を、<br>もっと特別に。</h3>
-            <p>フランス料理の修行時代、素材の持ち味を最大限に引き出す「火入れ」と「ソース」の重要性を学びました。</p>
-            <p>「焼き鳥ししとう」では、その経験を活かし、定番の焼き鳥はもちろん、フォアグラや鴨肉を使ったプレミアムな串焼きまで幅広くご用意しています。</p>
-            <p>家庭の食卓が、ほんの少し華やかになる。そんなテイクアウト体験を提供します。</p>
+            <h3>手軽に、でも本格的に。<br>テイクアウト専門だからこそ<br>できること。</h3>
+            <p>所沢市上新井で、<strong>焼き鳥・お弁当・お惣菜</strong>をテイクアウトでご提供しています。</p>
+            <p>一本90円の定番串から、フォワグラを使った贅沢なプレミアム串、18種類の味変ディップ、そして日替わりのお惣菜まで——。毎日の夕食のおかずにも、ちょっとしたご褒美にも。</p>
+            <p>お電話でのご予約も承っております。お気軽にお立ち寄りください。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="section menu-wrapper">
+    <!-- ======== MENU ======== -->
+    <section id="menu" class="section menu-section">
       <div class="container">
-        <div class="section-title fade-up">
-          <span>MENU</span>
-          お品書き
-        </div>
-        <p class="section-subtitle fade-up">※価格は全て税込です。</p>
+        <span class="section-label fade-up">Menu</span>
+        <h2 class="section-title fade-up">お品書き</h2>
+        <p class="section-desc fade-up">※価格はすべて税込です</p>
 
-        <!-- Premium & Specials -->
-        <div class="fade-up">
-          <h3 class="menu-category-title">プレミアム串・スペシャリテ</h3>
-          <div class="menu-grid" style="margin-bottom: 3rem;">
-            <article class="menu-card premium">
-              <h4>プレミアム串焼き <span class="menu-price-tag">各1,000円</span></h4>
-              <ul class="menu-list">
-                <li><span>フォワグラと国産鶏もも肉</span></li>
-                <li><span>フォワグラとマグレ・ド・カナール（鴨肉）</span></li>
-                <li><span>フォワグラと仔羊の背肉</span></li>
-                <li><span>黒毛和牛の牛串（A4・A5ランク確約）</span></li>
-              </ul>
-            </article>
-            <article class="menu-card">
-              <h4>京風だし巻き玉子 <span class="menu-price-tag">数量限定</span></h4>
-              <p style="font-size:0.85rem; color:#888; margin-bottom:1rem;">焼き上がり時間：11時 / 15時 / 19時</p>
-              <ul class="menu-list">
-                <li><span>だし巻き卵（1本）</span> <span>600円</span></li>
-                <li><span>親子焼き（鶏そぼろ入・1本）</span> <span>800円</span></li>
-              </ul>
-              <div style="margin-top:1rem; border-top:1px solid #eee; padding-top:1rem;">
-                <h5 style="font-size:1rem; color:#555; margin-bottom:0.5rem;">一品・おつまみ</h5>
-                 <ul class="menu-list">
-                  <li><span>おでん（7種）</span> <span>500円</span></li>
-                  <li><span>トリブタの味噌モツ煮</span> <span>500円</span></li>
-                  <li><span>鶏皮とキンカンの甘辛煮</span> <span>500円</span></li>
-                </ul>
+        <!-- Tab Navigation -->
+        <div class="menu-nav fade-up">
+          <button class="menu-nav-btn active" data-tab="tab-kushi">串もの</button>
+          <button class="menu-nav-btn" data-tab="tab-bento">お弁当・ご飯</button>
+          <button class="menu-nav-btn" data-tab="tab-deli">デリ・お惣菜</button>
+          <button class="menu-nav-btn" data-tab="tab-oyatsu">おやつ・ドリンク</button>
+        </div>
+
+        <!-- ===== TAB: 串もの ===== -->
+        <div class="menu-tab active" id="tab-kushi">
+
+          <!-- 焼きとり -->
+          <div class="menu-photo-card fade-up">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6052.jpeg" alt="焼きとり盛り合わせ">
+            <div class="menu-card-body">
+              <div class="menu-group-header">
+                <h3 class="menu-group-title">焼きとり</h3>
+                <span class="menu-group-price">各 90円</span>
               </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- Standard -->
-        <div class="fade-up">
-          <h3 class="menu-category-title">スタンダード串・お弁当</h3>
-          <div class="menu-grid">
-            <article class="menu-card">
-              <h4>定番焼きとり <span class="menu-price-tag">All 90円</span></h4>
-              <ul class="menu-list simple-grid">
-                <li>もも</li>
-                <li>ねぎま</li>
-                <li>かわ</li>
-                <li>ハツ</li>
-                <li>レバー</li>
-                <li>つみれ</li>
-                <li>ナンコツ</li>
-                <li>砂肝</li>
-                <li>むね</li>
-                <li>とり明太マヨ</li>
+              <p class="menu-note">選べるお味：<strong>塩 / タレ / 塩なし</strong></p>
+              <ul class="menu-list" style="margin-top:1rem;">
+                <li><span>もも</span></li>
+                <li><span>ねぎま</span></li>
+                <li><span>つくね</span></li>
+                <li><span>かわやわ焼き</span></li>
+                <li><span>かわカリ焼き</span></li>
+                <li><span>むね</span></li>
+                <li><span>ハツ</span></li>
+                <li><span>レバー</span></li>
+                <li><span>砂肝</span></li>
+                <li><span>ぼんじり</span></li>
               </ul>
-            </article>
-
-            <article class="menu-card">
-              <h4>野菜・変わり串 <span class="menu-price-tag">All 90円</span></h4>
-              <ul class="menu-list simple-grid">
-                <li>うずら塩</li>
-                <li>ししとう</li>
-                <li>ぎんなん</li>
-                <li>エリンギ</li>
-                <li>焼きアボカド</li>
-                <li>豚バラ</li>
-                <li>ちくわチーズ</li>
-                <li>ベビーホタテ</li>
-              </ul>
-            </article>
-
-            <article class="menu-card">
-              <h4>カップデリ（お惣菜） <span class="menu-price-tag">各350円</span></h4>
-              <p style="font-size:0.85rem; margin-bottom:0.5rem;">もう一品欲しい時に。</p>
-              <ul class="menu-list">
-                <li><span>よだれ鳥</span></li>
-                <li><span>蒸し鶏の香味ネギがけ</span></li>
-                <li><span>バジルチキン</span></li>
-                <li><span>枝豆 トリュフ塩</span></li>
-                <li><span>こんにゃくの味噌田楽</span></li>
-                <li><span>モッツァレラチーズの浅漬け</span></li>
-              </ul>
-            </article>
-
-            <article class="menu-card">
-              <h4>お弁当・ごはん <span class="menu-price-tag">各500円</span></h4>
-              <ul class="menu-list">
-                <li><span>鶏そぼろ焼き鳥丼</span></li>
-                <li><span>焼き鳥屋のカレー</span></li>
-                <li><span>シンガポール風チキンライス</span></li>
-                <li><span>タイ風ガパオライス</span></li>
-              </ul>
-              <div style="margin-top:1rem; font-size:0.85rem; background:#f9f9f9; padding:0.5rem; border-radius:4px;">
-                <strong>おやつ（各150円）：</strong><br>
-                焼きおにぎり、じゃがバター、フランクフルト、トッポギ、さつまいも大学いも、焼きマシュマロ
-              </div>
-            </article>
-            
-            <article class="menu-card">
-              <h4>味変ディップ <span class="menu-price-tag">各100円</span></h4>
-              <div class="mini-grid">
-                <div class="mini-item">温泉卵</div>
-                <div class="mini-item">辛味噌</div>
-                <div class="mini-item">タルタル</div>
-                <div class="mini-item">トリュフ塩</div>
-                <div class="mini-item">柚子胡椒</div>
-                <div class="mini-item">ガーリック</div>
-              </div>
-            </article>
-
-             <article class="menu-card">
-              <h4>ドリンク <span class="menu-price-tag">Drinks</span></h4>
-              <ul class="menu-list">
-                <li><span>缶ビール/ハイボール等</span> <span>350円</span></li>
-                <li><span>ラムネ</span> <span>300円</span></li>
-                <li><span>お茶/コーラ</span> <span>200円</span></li>
-                <li><span>コーヒー(HOT/ICE)</span> <span>100円</span></li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Access Information -->
-    <section id="access" class="section">
-      <div class="container">
-        <div class="section-title fade-up">
-          <span>INFORMATION</span>
-          店舗情報
-        </div>
-        
-        <div class="access-container fade-up">
-          <div class="access-info">
-            <h4 class="serif" style="font-size:1.4rem; margin-bottom:1.5rem;">焼き鳥 ししとう</h4>
-            <table>
-              <tr><th>住所</th><td>埼玉県所沢市小手指</td></tr>
-              <tr><th>営業時間</th><td>準備中</td></tr>
-              <tr><th>定休日</th><td>準備中</td></tr>
-              <tr><th>営業形態</th><td>テイクアウト専門店</td></tr>
-            </table>
-            <div style="margin-top:2rem; background:#fff5f5; color: var(--primary-color); padding:1rem; border-radius:8px;">
-              <strong>📅 2025年11月中旬 オープン予定</strong><br>
-              <small>※詳細が決まり次第、本サイトにてお知らせいたします。</small>
             </div>
           </div>
-          <div class="access-map">
-             <!-- Google Maps Embed (Placeholder image style) -->
-             <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&w=1931&auto=format&fit=crop" alt="地図イメージ" style="width:100%; height:100%; object-fit:cover; opacity:0.7;">
-             <span style="position:absolute; font-weight:bold; background:white; padding:0.5rem 1rem; border-radius:20px; box-shadow:0 2px 10px rgba(0,0,0,0.1);">Google Map 準備中</span>
+
+          <!-- 串焼き -->
+          <div class="menu-group fade-up">
+            <div class="menu-group-header">
+              <h3 class="menu-group-title">串焼き</h3>
+              <span class="menu-group-price">各 90円</span>
+            </div>
+            <div class="tag-grid">
+              <span class="tag">焼きタマゴ</span>
+              <span class="tag">うずら塩</span>
+              <span class="tag">うずらタレ</span>
+              <span class="tag">ぎんなん</span>
+              <span class="tag">ししとう</span>
+              <span class="tag">にんにく</span>
+              <span class="tag">長ネギ</span>
+              <span class="tag">ベビーコーン</span>
+            </div>
+          </div>
+
+          <!-- やきとん -->
+          <div class="menu-photo-card fade-up">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6083.jpeg" alt="やきとん盛り合わせ">
+            <div class="menu-card-body">
+              <div class="menu-group-header">
+                <h3 class="menu-group-title">やきとん</h3>
+                <span class="menu-group-price">各 150円</span>
+              </div>
+              <p class="menu-note">選べるお味：<strong>塩 / タレ / 塩なし</strong></p>
+              <ul class="menu-list" style="margin-top:1rem;">
+                <li><span>豚バラ</span></li>
+                <li><span>豚ねぎま</span></li>
+                <li><span>豚かしら</span></li>
+                <li><span>豚トロ</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- プレミアム串 -->
+          <div class="menu-items fade-up">
+            <article class="menu-card premium">
+              <h4>
+                <span>🌟 数量限定プレミアム串</span>
+                <span class="price-badge">各 1,000円</span>
+              </h4>
+              <ul class="menu-list">
+                <li><span>フォワグラと鶏もも肉</span></li>
+                <li><span>フォワグラとつくね</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- 味変ディップ -->
+          <div class="menu-group fade-up" style="margin-top:2rem;">
+            <div class="menu-group-header">
+              <h3 class="menu-group-title">味変ディップ</h3>
+              <span class="menu-group-price">各 100円</span>
+            </div>
+            <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1rem;">＼ 美味しさ2倍！お好きな串に付けてお楽しみください ／</p>
+            <div class="tag-grid">
+              <span class="tag">温泉卵</span>
+              <span class="tag">東松山名物からみそ</span>
+              <span class="tag">タルタルソース</span>
+              <span class="tag">梅マヨネーズ</span>
+              <span class="tag">わさびマヨネーズ</span>
+              <span class="tag">明太子マヨネーズ</span>
+              <span class="tag">コチジャンマヨネーズ</span>
+              <span class="tag">具沢山ラー油</span>
+              <span class="tag">スイートチリソース</span>
+              <span class="tag">油林鶏ソース</span>
+              <span class="tag">バジルソース</span>
+              <span class="tag">オリジナル七味</span>
+              <span class="tag">ガーリックチップ</span>
+              <span class="tag">トリュフ塩</span>
+              <span class="tag">フランス産フルール・ド・セル</span>
+              <span class="tag">柚子胡椒</span>
+              <span class="tag">からし</span>
+              <span class="tag">ハラペーニョ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== TAB: お弁当・ご飯 ===== -->
+        <div class="menu-tab" id="tab-bento">
+
+          <!-- お弁当 -->
+          <div class="menu-photo-card fade-up">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6082.jpeg" alt="お弁当2種">
+            <div class="menu-card-body">
+              <div class="menu-group-header">
+                <h3 class="menu-group-title">お弁当</h3>
+                <span class="menu-group-price">各 500円</span>
+              </div>
+              <ul class="menu-list">
+                <li><span>焼き鳥そぼろ丼</span></li>
+                <li><span>焼き鳥屋のカレー</span></li>
+                <li><span>チキンライス（シンガポール風）</span></li>
+                <li><span>タイ風ガパオライス</span></li>
+              </ul>
+              <p class="menu-note" style="margin-top:1rem;">
+                <strong>ご飯&amp;具も大盛り +200円</strong><br>
+                +100円トッピング：温泉卵 or ゆでたまご
+              </p>
+            </div>
+          </div>
+
+          <!-- 個別お弁当写真 -->
+          <div class="fade-up" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;">
+            <div style="border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);">
+              <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6076.jpeg" alt="チキンライス（シンガポール風）" style="width:100%;aspect-ratio:1;object-fit:cover;">
+              <div style="padding:.6rem .8rem;background:#fff;font-size:.82rem;text-align:center;font-weight:500;">チキンライス</div>
+            </div>
+            <div style="border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);">
+              <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6077.jpeg" alt="タイ風ガパオライス" style="width:100%;aspect-ratio:1;object-fit:cover;">
+              <div style="padding:.6rem .8rem;background:#fff;font-size:.82rem;text-align:center;font-weight:500;">ガパオライス</div>
+            </div>
+            <div style="border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);">
+              <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6079.jpeg" alt="焼き鳥屋のカレー" style="width:100%;aspect-ratio:1;object-fit:cover;">
+              <div style="padding:.6rem .8rem;background:#fff;font-size:.82rem;text-align:center;font-weight:500;">焼き鳥屋のカレー</div>
+            </div>
+          </div>
+
+          <!-- ご飯もの・汁物 -->
+          <div class="menu-group fade-up">
+            <div class="menu-group-header">
+              <h3 class="menu-group-title">ご飯もの・汁物</h3>
+            </div>
+            <div class="compact-grid">
+              <div class="compact-item"><span>中華ちまき 小</span><span class="cp-price">250円</span></div>
+              <div class="compact-item"><span>中華ちまき 中（豚角煮入り）</span><span class="cp-price">350円</span></div>
+              <div class="compact-item"><span>単品 ご飯</span><span class="cp-price">250円</span></div>
+              <div class="compact-item"><span>単品 ご飯大盛り</span><span class="cp-price">350円</span></div>
+              <div class="compact-item"><span>カップ味噌汁 各種</span><span class="cp-price">200円</span></div>
+            </div>
+            <p class="menu-note">味噌汁：あおさ / 赤だし / あさり / 豚汁</p>
+          </div>
+
+          <!-- 京風だし巻き玉子 -->
+          <div class="menu-photo-card fade-up" style="margin-top:2rem;">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6695.jpeg" alt="京風だし巻き玉子（ネギ入り）">
+            <div class="menu-card-body">
+              <div class="menu-group-header">
+                <h3 class="menu-group-title">京風だし巻き玉子</h3>
+              </div>
+              <p class="menu-note" style="margin-bottom:1rem;">🕐 焼き上がり：<strong>11時〜 / 15時〜 / 17時〜</strong></p>
+              <ul class="menu-list">
+                <li><span>だし巻き玉子</span><span class="item-price">600円</span></li>
+                <li><span>だし巻き玉子 ネギ入り</span><span class="item-price">800円</span></li>
+                <li><span>だし巻き玉子 そぼろ入り</span><span class="item-price">800円</span></li>
+              </ul>
+            </div>
+          </div>
+          <div style="display:flex;gap:.8rem;margin-top:1rem;" class="fade-up">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6701.jpeg" alt="だし巻き玉子（そぼろ入り）" style="width:50%;border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:16/10;object-fit:cover;">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6695.jpeg" alt="だし巻き玉子（ネギ入り）" style="width:50%;border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:16/10;object-fit:cover;">
+          </div>
+        </div>
+
+        <!-- ===== TAB: デリ・お惣菜 ===== -->
+        <div class="menu-tab" id="tab-deli">
+
+          <!-- カップデリ -->
+          <div class="menu-photo-card fade-up">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6055.jpeg" alt="カップデリ3種盛り">
+            <div class="menu-card-body">
+              <div class="menu-group-header">
+                <h3 class="menu-group-title">カップデリ</h3>
+                <span class="menu-group-price">各 350円</span>
+              </div>
+              <ul class="menu-list">
+                <li><span>紀州南高梅のハチミツ梅</span></li>
+                <li><span>よだれ鶏 / 棒棒鶏</span></li>
+                <li><span>蒸し鶏の油林鶏</span></li>
+                <li><span>バジルぽてとチキン</span></li>
+                <li><span>枝豆 トリュフの香り</span></li>
+                <li><span>鶏皮ぽん酢</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- カップデリ写真 -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0 2.5rem;" class="fade-up">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6704.jpeg" alt="カップデリ" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6707.jpeg" alt="カップデリ" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6055.jpeg" alt="カップデリ3種" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
+          </div>
+
+          <!-- お惣菜 -->
+          <div class="menu-photo-card fade-up">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6694.jpeg" alt="鶏の照り焼き タルタルソース">
+            <div class="menu-card-body">
+              <div class="menu-group-header">
+                <h3 class="menu-group-title">お惣菜</h3>
+                <span class="menu-group-price">各 500円</span>
+              </div>
+              <ul class="menu-list">
+                <li><span>鶏おでん8種</span></li>
+                <li><span>やげんナンコツの塩焼き</span></li>
+                <li><span>韓国風とり手羽先の旨辛焼き</span></li>
+                <li><span>鶏豚みそモツ煮</span></li>
+                <li><span>鶏皮とキンカンの甘辛煮</span></li>
+                <li><span>鶏の照り焼き タルタルソース</span></li>
+                <li><span>グリルソーセージ3種盛り</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- お惣菜写真ギャラリー -->
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:1.5rem;" class="fade-up">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6063.jpeg" alt="韓国風とり手羽先の旨辛焼き" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6530.jpeg" alt="グリルソーセージ3種盛り" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6714.jpeg" alt="お惣菜" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6719.jpeg" alt="鶏皮とキンカンの甘辛煮" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
+          </div>
+        </div>
+
+        <!-- ===== TAB: おやつ・ドリンク ===== -->
+        <div class="menu-tab" id="tab-oyatsu">
+
+          <!-- おやつ -->
+          <div class="menu-group fade-up">
+            <div class="menu-group-header">
+              <h3 class="menu-group-title">おやつ</h3>
+              <span class="menu-group-price">各 150円</span>
+            </div>
+            <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1.2rem;">★ 小腹がすいたらコレ！学校帰りや、お酒のお供にもピッタリ ★</p>
+
+            <div class="menu-items">
+              <article class="menu-card">
+                <h4>ごはん系・ガッツリ</h4>
+                <ul class="menu-list">
+                  <li><span>焼きおにぎり 深井醤油</span></li>
+                  <li><span>焼きおにぎり フルール・ド・セル</span></li>
+                  <li><span>焼きおにぎり 味噌</span></li>
+                  <li><span>焼きおにぎり ガーリック</span></li>
+                </ul>
+              </article>
+              <article class="menu-card">
+                <h4>串モノ・人気者</h4>
+                <ul class="menu-list">
+                  <li><span>とりマヨ明太子</span></li>
+                  <li><span>とりマヨ梅</span></li>
+                  <li><span>とりマヨわさび</span></li>
+                  <li><span>とりマヨコチジャン</span></li>
+                  <li><span>アスパラベーコン</span></li>
+                  <li><span>焼きトウモロコシ</span></li>
+                  <li><span>フランク先輩</span></li>
+                  <li><span>タコさんウインナー</span></li>
+                  <li><span>ナルトちゃん</span></li>
+                  <li><span>チーかま君</span></li>
+                  <li><span>帆立バター醤油</span></li>
+                  <li><span>エビマヨ串</span></li>
+                  <li><span>イカ焼き串</span></li>
+                </ul>
+              </article>
+              <article class="menu-card">
+                <h4>ポテト系 &amp; あまいもの</h4>
+                <ul class="menu-list">
+                  <li><span>ハッシュドポテト</span></li>
+                  <li><span>じゃがバター</span></li>
+                  <li><span>じゃがアンチョビ</span></li>
+                </ul>
+                <div style="margin-top:1rem;padding-top:.8rem;border-top:1px solid #eee;">
+                  <ul class="menu-list">
+                    <li><span>プチ桃まん</span></li>
+                    <li><span>焼きいも大学</span></li>
+                    <li><span>焼きりんごのタルト</span></li>
+                    <li><span>焼きパイナップルのタルト</span></li>
+                    <li><span>焼きマシュマロのタルト</span></li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- ドリンク -->
+          <div class="menu-group fade-up" style="margin-top:2rem;">
+            <div class="menu-group-header">
+              <h3 class="menu-group-title">ドリンク</h3>
+            </div>
+            <div class="compact-grid">
+              <div class="compact-item"><span>ビール</span><span class="cp-price">350円</span></div>
+              <div class="compact-item"><span>チューハイ</span><span class="cp-price">350円</span></div>
+              <div class="compact-item"><span>ハイボール</span><span class="cp-price">350円</span></div>
+              <div class="compact-item"><span>黒ウーロン茶</span><span class="cp-price">250円</span></div>
+              <div class="compact-item"><span>レッドブル</span><span class="cp-price">250円</span></div>
+              <div class="compact-item"><span>ラムネ</span><span class="cp-price">250円</span></div>
+              <div class="compact-item"><span>コーラ</span><span class="cp-price">200円</span></div>
+              <div class="compact-item"><span>ジンジャーエール</span><span class="cp-price">200円</span></div>
+              <div class="compact-item"><span>オレンジジュース</span><span class="cp-price">200円</span></div>
+              <div class="compact-item"><span>おーいお茶</span><span class="cp-price">200円</span></div>
+              <div class="compact-item"><span>コーヒー (Hot/Ice)</span><span class="cp-price">100円</span></div>
+              <div class="compact-item"><span>紅茶 (Hot/Ice)</span><span class="cp-price">100円</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======== GALLERY ======== -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <span class="section-label fade-up">Gallery</span>
+        <h2 class="section-title fade-up">商品ギャラリー</h2>
+        <p class="section-desc fade-up">一つひとつ丁寧に仕上げたお料理をご覧ください</p>
+        <div class="gallery-grid fade-up">
+          <div class="gallery-item">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6052.jpeg" alt="焼き鳥盛り合わせ">
+            <span>焼きとり</span>
+          </div>
+          <div class="gallery-item">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6495.jpeg" alt="プレミアム串">
+            <span>プレミアム串</span>
+          </div>
+          <div class="gallery-item">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6083.jpeg" alt="やきとん">
+            <span>やきとん</span>
+          </div>
+          <div class="gallery-item">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6695.jpeg" alt="京風だし巻き玉子">
+            <span>だし巻き玉子</span>
+          </div>
+          <div class="gallery-item">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6055.jpeg" alt="カップデリ3種">
+            <span>カップデリ</span>
+          </div>
+          <div class="gallery-item">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6076.jpeg" alt="シンガポール風チキンライス">
+            <span>チキンライス</span>
+          </div>
+          <div class="gallery-item">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6694.jpeg" alt="鶏の照り焼き タルタルソース">
+            <span>照り焼きタルタル</span>
+          </div>
+          <div class="gallery-item">
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6530.jpeg" alt="グリルソーセージ3種盛り">
+            <span>グリルソーセージ</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section" style="background:#fbfbfb;">
-      <div class="container" style="max-width:800px;">
-        <div class="section-title fade-up">
-          <span>Q&A</span>
-          よくある質問
+    <!-- ======== ACCESS ======== -->
+    <section id="access" class="section" style="background:var(--bg-warm);">
+      <div class="container">
+        <span class="section-label fade-up">Information</span>
+        <h2 class="section-title fade-up">店舗情報</h2>
+        <div class="access-card fade-up">
+          <div class="access-card-inner">
+            <div class="access-info">
+              <h3 class="serif">お持ち帰りの専門 ししとう</h3>
+              <table class="access-table">
+                <tr><th>住所</th><td>〒359-1142<br>埼玉県所沢市上新井３丁目２２−３０</td></tr>
+                <tr><th>電話</th><td><a href="tel:07091507039">070-9150-7039</a></td></tr>
+                <tr><th>営業時間</th><td>毎日 11:30〜21:00</td></tr>
+                <tr><th>決済</th><td>現金のみ</td></tr>
+                <tr><th>形態</th><td>テイクアウト専門店</td></tr>
+              </table>
+            </div>
+            <div class="access-visual">
+              <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6082.jpeg" alt="お弁当">
+              <a href="https://www.google.com/maps/search/?api=1&query=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%89%80%E6%B2%A2%E5%B8%82%E4%B8%8A%E6%96%B0%E4%BA%953%E4%B8%81%E7%9B%AE22-30" target="_blank" rel="noopener noreferrer" class="access-map-btn">
+                <span class="material-symbols-outlined" style="font-size:1rem;">location_on</span>
+                Google Map で見る
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="fade-up">
-          <details>
+      </div>
+    </section>
+
+    <!-- ======== FAQ ======== -->
+    <section id="faq" class="section">
+      <div class="container" style="max-width:750px;">
+        <span class="section-label fade-up">FAQ</span>
+        <h2 class="section-title fade-up">よくある質問</h2>
+        <div style="margin-top:2rem;">
+          <details class="faq-item fade-up">
             <summary>予約は必要ですか？</summary>
-            <div class="faq-content">予約なしでもお買い求めいただけますが、ご注文をいただいてから焼き上げるため、混雑時はお時間をいただく場合がございます。事前予約（前払い制）をご利用いただくと、待ち時間なくスムーズにお受け取りいただけます。</div>
+            <div class="faq-answer">予約なしでもご利用いただけます。混雑時はお待ちいただく場合があるため、事前にお電話いただくと受け取りがスムーズです。</div>
           </details>
-          <details>
-            <summary>駐車場はありますか？</summary>
-            <div class="faq-content">現在は準備中です。詳細が決まり次第、Webサイトおよび店頭にてご案内いたします。</div>
+          <details class="faq-item fade-up">
+            <summary>営業時間を教えてください。</summary>
+            <div class="faq-answer">毎日 11:30〜21:00 で通し営業しています。お昼のランチから夕食のおかずまで、幅広い時間帯でご利用いただけます。</div>
           </details>
-          <details>
+          <details class="faq-item fade-up">
             <summary>支払い方法は何がありますか？</summary>
-            <div class="faq-content">現金のほか、各種クレジットカード、電子マネー、QRコード決済に対応予定です。</div>
+            <div class="faq-answer">現在は現金のみの対応となっております。ご了承ください。</div>
+          </details>
+          <details class="faq-item fade-up">
+            <summary>電話で注文できますか？</summary>
+            <div class="faq-answer">はい、お電話でのご注文を承っております。<strong>070-9150-7039</strong> までお気軽にお電話ください。出来上がり時間をお伝えしますので、スムーズにお受け取りいただけます。</div>
+          </details>
+          <details class="faq-item fade-up">
+            <summary>だし巻き玉子はいつでも買えますか？</summary>
+            <div class="faq-answer">京風だし巻き玉子は数量限定で、焼き上がり時間は 11時〜 / 15時〜 / 17時〜 の3回です。お早めのご来店がおすすめです。</div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section" style="background:white;">
-      <div class="container text-center">
-         <div class="section-title fade-up">
-          <span>CONTACT</span>
-          お問い合わせ
+    <!-- ======== CTA ======== -->
+    <section class="cta-section">
+      <div class="container fade-up">
+        <h3 class="serif">ご注文・お問い合わせ</h3>
+        <p>お電話でのご予約・お取り置きも承っております</p>
+        <div class="cta-phone">
+          <span class="material-symbols-outlined">call</span>
+          <a href="tel:07091507039" style="color:#fff;">070-9150-7039</a>
         </div>
-        <div class="fade-up">
-          <p style="margin-bottom:2rem;">ご予約・お問い合わせは店頭にて承っております。<br>電話番号は決定次第掲載いたします。</p>
-          <a href="#menu" class="btn-primary">メニューを見る</a>
-        </div>
+        <br>
+        <a href="tel:07091507039" class="btn-cta">
+          <span class="material-symbols-outlined">call</span>
+          今すぐ電話する
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-inner">
         <div class="footer-brand">
-          <!-- Footer Logo -->
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-             <img src="assets/ロゴ.jpg" alt="焼き鳥 ししとう" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
-             <h2 style="margin:0; font-size:1.4rem;">焼き鳥 ししとう</h2>
-          </div>
-          <p>埼玉県所沢市小手指<br>テイクアウト専門焼き鳥店</p>
+          <img src="assets/ロゴ.jpg" alt="ししとう">
+          <h4>焼き鳥 ししとう</h4>
         </div>
         <div class="footer-links">
-          <h4>ナビゲーション</h4>
           <a href="#about">こだわり</a>
           <a href="#menu">お品書き</a>
-          <a href="#access">アクセス</a>
-        </div>
-        <div class="footer-links">
-          <h4>サポート</h4>
+          <a href="#gallery">ギャラリー</a>
+          <a href="#access">店舗情報</a>
           <a href="#faq">よくある質問</a>
-          <a href="#contact">お問い合わせ</a>
         </div>
       </div>
-      <div class="copyright">
-        &copy; 2025 Yakitori Shishitou. All Rights Reserved.
-      </div>
+      <div class="copyright">&copy; 2025 お持ち帰りの専門 ししとう All Rights Reserved.</div>
     </div>
   </footer>
 
   <script>
-    // Mobile Menu Logic
-    const menuToggle = document.querySelector('.menu-toggle');
+    /* === Mobile Menu === */
+    const hamburger = document.querySelector('.hamburger');
     const navMobile = document.querySelector('.nav-mobile');
     const navOverlay = document.querySelector('.nav-overlay');
     const mobileLinks = document.querySelectorAll('.nav-mobile a');
-
     function toggleMenu() {
-      menuToggle.classList.toggle('open');
+      hamburger.classList.toggle('open');
       navMobile.classList.toggle('open');
       navOverlay.classList.toggle('open');
     }
-
-    menuToggle.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('click', toggleMenu);
     navOverlay.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+    mobileLinks.forEach(l => l.addEventListener('click', toggleMenu));
 
-    // Scroll Animations (Intersection Observer)
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // Run once
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.fade-up').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Header Background change on scroll
+    /* === Header Scroll === */
     const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.style.background = "rgba(255, 255, 255, 0.98)";
-        header.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)";
+    function updateHeader() {
+      if (window.scrollY > 60) {
+        header.classList.remove('header--top');
+        header.classList.add('header--scrolled');
       } else {
-        header.style.background = "rgba(255, 255, 255, 0.95)";
-        header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.03)";
+        header.classList.add('header--top');
+        header.classList.remove('header--scrolled');
       }
+    }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
+    /* === Menu Tabs === */
+    const tabBtns = document.querySelectorAll('.menu-nav-btn');
+    const tabs = document.querySelectorAll('.menu-tab');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabs.forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+        const targetTab = document.getElementById(btn.dataset.tab);
+        targetTab.classList.add('active');
+        // Re-trigger fade-up for newly visible items
+        targetTab.querySelectorAll('.fade-up:not(.visible)').forEach(el => {
+          observer.observe(el);
+        });
+      });
     });
+
+    /* === Scroll Animation === */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

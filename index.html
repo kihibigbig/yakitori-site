@@ -40,7 +40,7 @@
     .header--scrolled{background:rgba(26,26,26,.96);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.15);}
     .header .container{display:flex;justify-content:space-between;align-items:center;height:64px;}
     .brand{display:flex;align-items:center;gap:.7rem;}
-    .brand-logo{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.2);}
+    .brand-logo{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.2);background:#fff;padding:2px;}
     .header--scrolled .brand-logo{border-color:var(--gold);}
     .brand-name{font-family:var(--serif);font-size:1.15rem;color:#fff;font-weight:700;letter-spacing:.06em;}
     .brand-sub{font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:.12em;margin-top:1px;}
@@ -132,13 +132,13 @@
     @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem;}.about-img-accent{width:35%;bottom:-1rem;right:-1rem;}}
 
     /* ===== MENU SECTION ===== */
-    .menu-section{background:var(--bg-warm);}
+    .menu-section{background:#EDE8DF;}
 
     /* Menu Nav (Tab Buttons) */
     .menu-nav{display:flex;justify-content:center;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap;}
-    .menu-nav-btn{padding:.6rem 1.4rem;border:1.5px solid #ddd;border-radius:50px;font-size:.85rem;font-weight:500;background:var(--white);color:var(--text);cursor:pointer;transition:all .3s;font-family:var(--sans);}
-    .menu-nav-btn:hover{border-color:var(--crimson);color:var(--crimson);}
-    .menu-nav-btn.active{background:var(--crimson);color:#fff;border-color:var(--crimson);}
+    .menu-nav-btn{padding:.7rem 1.6rem;border:2px solid #ccc;border-radius:50px;font-size:.95rem;font-weight:600;background:var(--white);color:var(--text);cursor:pointer;transition:all .3s;font-family:var(--sans);box-shadow:0 2px 8px rgba(0,0,0,.04);}
+    .menu-nav-btn:hover{border-color:var(--crimson);color:var(--crimson);box-shadow:0 4px 12px rgba(139,26,43,.1);}
+    .menu-nav-btn.active{background:var(--crimson);color:#fff;border-color:var(--crimson);box-shadow:0 4px 16px rgba(139,26,43,.25);}
 
     /* Menu Tab Content */
     .menu-tab{display:none;}
@@ -146,22 +146,22 @@
 
     /* Menu Group */
     .menu-group{margin-bottom:3rem;}
-    .menu-group-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:.8rem;border-bottom:2px solid var(--gold-light);}
-    .menu-group-title{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--dark);}
-    .menu-group-price{font-size:.85rem;font-weight:600;color:var(--crimson);background:rgba(139,26,43,.08);padding:.25rem .8rem;border-radius:50px;white-space:nowrap;}
+    .menu-group-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:.8rem;border-bottom:2px solid var(--gold);}
+    .menu-group-title{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--dark);}
+    .menu-group-price{font-size:.9rem;font-weight:700;color:#fff;background:var(--crimson);padding:.3rem 1rem;border-radius:50px;white-space:nowrap;}
 
     /* Menu Card with Photo */
-    .menu-photo-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);margin-bottom:2rem;}
-    .menu-photo-card img{width:100%;height:100%;object-fit:cover;min-height:250px;}
-    .menu-photo-card .menu-card-body{padding:2rem;}
-    @media(max-width:768px){.menu-photo-card{grid-template-columns:1fr;}.menu-photo-card img{max-height:220px;}}
+    .menu-photo-card{display:grid;grid-template-columns:2fr 3fr;gap:0;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:2rem;border:1px solid rgba(0,0,0,.04);}
+    .menu-photo-card img{width:100%;height:100%;object-fit:cover;min-height:280px;}
+    .menu-photo-card .menu-card-body{padding:2rem 2.5rem;}
+    @media(max-width:768px){.menu-photo-card{grid-template-columns:1fr;}.menu-photo-card img{max-height:240px;}.menu-photo-card .menu-card-body{padding:1.5rem;}}
 
     /* Menu Items Grid */
-    .menu-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;}
-    .menu-card{background:var(--white);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);transition:all .3s;border:1px solid transparent;}
-    .menu-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--gold-light);}
-    .menu-card h4{font-family:var(--serif);font-size:1.1rem;color:var(--dark);margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;padding-bottom:.6rem;border-bottom:1px solid #eee;}
-    .menu-card .price-badge{font-size:.8rem;font-weight:700;color:var(--crimson);background:rgba(139,26,43,.06);padding:.2rem .6rem;border-radius:4px;white-space:nowrap;}
+    .menu-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
+    .menu-card{background:var(--white);border-radius:var(--radius);padding:1.8rem;box-shadow:var(--shadow-md);transition:all .3s;border:1px solid rgba(0,0,0,.04);}
+    .menu-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--gold-light);}
+    .menu-card h4{font-family:var(--serif);font-size:1.2rem;color:var(--dark);margin-bottom:1.2rem;display:flex;justify-content:space-between;align-items:center;padding-bottom:.7rem;border-bottom:2px solid #eee;}
+    .menu-card .price-badge{font-size:.85rem;font-weight:700;color:#fff;background:var(--crimson);padding:.25rem .7rem;border-radius:4px;white-space:nowrap;}
 
     /* Premium Card */
     .menu-card.premium{background:linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 100%);color:#fff;border:1px solid rgba(201,169,110,.3);}
@@ -170,23 +170,24 @@
     .menu-card.premium .menu-list li{color:rgba(255,255,255,.8);}
     .menu-card.premium .menu-list li::before{color:var(--gold);}
 
-    .menu-list li{position:relative;padding-left:1rem;margin-bottom:.5rem;font-size:.92rem;display:flex;justify-content:space-between;align-items:baseline;}
-    .menu-list li::before{content:'●';position:absolute;left:0;top:.15em;font-size:.4rem;color:var(--gold);}
-    .menu-list li .item-price{font-weight:700;color:var(--crimson);white-space:nowrap;margin-left:1rem;}
+    .menu-list li{position:relative;padding-left:1.2rem;margin-bottom:.65rem;font-size:1rem;display:flex;justify-content:space-between;align-items:baseline;line-height:1.6;}
+    .menu-list li::before{content:'';position:absolute;left:0;top:.65em;width:6px;height:6px;background:var(--gold);border-radius:50%;}
+    .menu-list li .item-price{font-weight:700;color:var(--crimson);white-space:nowrap;margin-left:1rem;font-size:1.05rem;}
 
     /* Tag Grid (for dips, snacks) */
     .tag-grid{display:flex;flex-wrap:wrap;gap:.5rem;}
-    .tag{display:inline-block;padding:.35rem .8rem;background:var(--white);border:1px solid #e0e0e0;border-radius:50px;font-size:.82rem;color:var(--text);transition:all .2s;}
-    .tag:hover{border-color:var(--gold);background:var(--gold-pale);}
+    .tag{display:inline-block;padding:.5rem 1rem;background:var(--white);border:1.5px solid #d0d0d0;border-radius:50px;font-size:.92rem;font-weight:500;color:var(--dark);transition:all .2s;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+    .tag:hover{border-color:var(--gold);background:var(--gold-pale);box-shadow:0 2px 8px rgba(201,169,110,.15);}
 
     /* Compact List (for sides) */
     .compact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.8rem;}
-    .compact-item{background:var(--white);padding:.7rem 1rem;border-radius:8px;font-size:.9rem;display:flex;justify-content:space-between;align-items:center;border:1px solid #eee;}
-    .compact-item .cp-price{font-weight:700;color:var(--crimson);font-size:.85rem;}
+    .compact-item{background:var(--white);padding:.8rem 1.2rem;border-radius:8px;font-size:.95rem;display:flex;justify-content:space-between;align-items:center;border:1px solid #e0e0e0;box-shadow:0 1px 4px rgba(0,0,0,.03);transition:all .2s;}
+    .compact-item:hover{border-color:var(--gold-light);box-shadow:0 2px 8px rgba(0,0,0,.06);}
+    .compact-item .cp-price{font-weight:700;color:var(--crimson);font-size:.95rem;}
 
     /* Menu Note */
-    .menu-note{font-size:.82rem;color:var(--text-muted);background:rgba(201,169,110,.08);padding:.6rem 1rem;border-radius:6px;margin-top:.8rem;line-height:1.6;}
-    .menu-note strong{color:var(--crimson);}
+    .menu-note{font-size:.88rem;color:var(--text);background:rgba(201,169,110,.12);padding:.7rem 1.2rem;border-radius:8px;margin-top:.8rem;line-height:1.7;border-left:3px solid var(--gold);}
+    .menu-note strong{color:var(--crimson);font-weight:700;}
 
     /* ===== GALLERY ===== */
     .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;}
@@ -210,10 +211,10 @@
     .access-table td{padding:.9rem 0;font-size:.92rem;color:var(--text);}
     .access-table a{color:var(--crimson);font-weight:600;}
     .access-table a:hover{text-decoration:underline;}
-    .access-visual{position:relative;background:var(--dark);display:flex;align-items:center;justify-content:center;min-height:300px;}
-    .access-visual img{width:100%;height:100%;object-fit:cover;opacity:.8;}
-    .access-map-btn{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--white);color:var(--dark);padding:.6rem 1.5rem;border-radius:50px;font-weight:600;font-size:.85rem;box-shadow:0 4px 16px rgba(0,0,0,.2);display:flex;align-items:center;gap:.4rem;white-space:nowrap;}
-    .access-map-btn:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25);}
+    .access-visual{position:relative;background:#f0ece4;display:flex;flex-direction:column;min-height:300px;}
+    .access-visual iframe{width:100%;flex:1;border:none;min-height:300px;}
+    .access-map-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.7rem 1.5rem;background:var(--white);color:var(--dark);font-weight:600;font-size:.85rem;border-top:1px solid #e0e0e0;transition:all .3s;white-space:nowrap;}
+    .access-map-btn:hover{background:var(--gold-pale);color:var(--crimson);}
     @media(max-width:768px){.access-card-inner{grid-template-columns:1fr;}.access-info{padding:1.5rem;}}
 
     /* ===== FAQ ===== */
@@ -239,7 +240,7 @@
     .footer{background:var(--dark);color:rgba(255,255,255,.5);padding:3rem 0 1.5rem;font-size:.85rem;}
     .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08);}
     .footer-brand{display:flex;align-items:center;gap:.7rem;}
-    .footer-brand img{width:36px;height:36px;border-radius:50%;object-fit:cover;}
+    .footer-brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;background:#fff;padding:2px;border:1px solid rgba(255,255,255,.15);}
     .footer-brand h4{color:#fff;font-family:var(--serif);font-size:1.1rem;}
     .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
     .footer-links a{color:rgba(255,255,255,.5);font-size:.82rem;transition:color .3s;}
@@ -270,7 +271,7 @@
         <a href="#menu">お品書き</a>
         <a href="#gallery">ギャラリー</a>
         <a href="#access">店舗情報</a>
-        <a href="tel:07091507039" class="nav-cta">📞 電話注文</a>
+        <a href="tel:07091507039" class="nav-cta">電話注文</a>
       </nav>
       <button class="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
     </div>
@@ -282,7 +283,7 @@
     <a href="#gallery">ギャラリー</a>
     <a href="#access">店舗情報</a>
     <a href="#faq">よくある質問</a>
-    <a href="tel:07091507039">📞 電話する</a>
+    <a href="tel:07091507039">電話する</a>
   </nav>
 
   <main>
@@ -753,10 +754,10 @@
               </table>
             </div>
             <div class="access-visual">
-              <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6082.jpeg" alt="お弁当">
+              <iframe src="https://www.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%89%80%E6%B2%A2%E5%B8%82%E4%B8%8A%E6%96%B0%E4%BA%953%E4%B8%81%E7%9B%AE22-30&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ししとう 所在地"></iframe>
               <a href="https://www.google.com/maps/search/?api=1&query=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%89%80%E6%B2%A2%E5%B8%82%E4%B8%8A%E6%96%B0%E4%BA%953%E4%B8%81%E7%9B%AE22-30" target="_blank" rel="noopener noreferrer" class="access-map-btn">
-                <span class="material-symbols-outlined" style="font-size:1rem;">location_on</span>
-                Google Map で見る
+                <span class="material-symbols-outlined" style="font-size:1rem;">open_in_new</span>
+                Google Map で大きく見る
               </a>
             </div>
           </div>

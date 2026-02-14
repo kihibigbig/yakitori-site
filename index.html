@@ -99,9 +99,13 @@
     .hero-visual{display:flex;justify-content:center;align-items:center;}
     .hero-img-main{width:85%;max-width:420px;border-radius:var(--radius-lg);box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.05);}
     @media(max-width:768px){
-      .hero .container{grid-template-columns:1fr;text-align:center;padding-top:100px;}
-      .hero-visual{order:-1;margin-bottom:1rem;}
-      .hero-img-main{width:65%;max-width:280px;}
+      .hero .container{grid-template-columns:1fr;text-align:center;padding-top:80px;padding-bottom:20px;gap:1.5rem;}
+      .hero-visual{order:-1;margin-bottom:0;}
+      .hero-img-main{width:48%;max-width:200px;}
+      .hero h2{font-size:1.5rem;line-height:1.5;}
+      .hero-desc{font-size:.85rem;line-height:1.8;}
+      .hero-desc br{display:none;}
+      .hero-badge{font-size:.6rem;padding:.25rem .7rem;margin-bottom:.8rem;}
       .hero-actions{justify-content:center;}
     }
 
@@ -112,7 +116,7 @@
     .highlight-num{font-family:var(--serif);font-size:2.2rem;font-weight:800;color:var(--crimson);line-height:1;}
     .highlight-unit{font-size:.9rem;color:var(--crimson);}
     .highlight-label{font-size:.85rem;color:var(--text-muted);margin-top:.4rem;}
-    @media(max-width:600px){.highlights-grid{grid-template-columns:1fr;}.highlight-card{padding:1rem;display:flex;align-items:center;gap:1rem;text-align:left;}.highlight-card>div:first-child{min-width:80px;}}
+    @media(max-width:600px){.highlights-grid{grid-template-columns:1fr;}.highlight-card{padding:.7rem 1rem;display:flex;align-items:center;gap:.8rem;text-align:left;}.highlight-card>div:first-child{min-width:70px;}.highlight-num{font-size:1.6rem;}.highlight-unit{font-size:.7rem;}.highlight-label{font-size:.78rem;margin-top:0;}}
 
     /* ===== SECTION COMMON ===== */
     .section{padding:5rem 0;}
@@ -129,7 +133,7 @@
     .about-text h3::before{content:'';position:absolute;left:0;top:.3rem;bottom:.3rem;width:3px;background:var(--gold);border-radius:2px;}
     .about-text p{color:#555;margin-bottom:1rem;font-size:.95rem;}
     .about-text p strong{color:var(--crimson);}
-    @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem;}.about-img-accent{width:35%;bottom:-1rem;right:-1rem;}}
+    @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem;}.about-img-accent{width:35%;bottom:-1rem;right:-1rem;}.about-text h3{font-size:1.2rem;line-height:1.7;}.about-text h3 br{display:none;}.about-text p{font-size:.88rem;}}
 
     /* ===== MENU SECTION ===== */
     .menu-section{background:#EDE8DF;padding-bottom:4rem;}
@@ -172,9 +176,20 @@
     .menu-block.premium .menu-item{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.1);}
 
     @media(max-width:600px){
-      .menu-block{padding:1.5rem 1.2rem;}
-      .menu-item-grid{grid-template-columns:repeat(2,1fr);}
-      .menu-price-grid{grid-template-columns:1fr;}
+      .menu-nav{padding:1rem;}
+      .menu-nav-list{display:grid;grid-template-columns:repeat(2,1fr);gap:.35rem;}
+      .menu-nav-chip{justify-content:center;padding:.4rem .4rem;font-size:.76rem;gap:.15rem;white-space:normal;}
+      .menu-nav-chip .chip-price{font-size:.66rem;}
+      .menu-block{padding:1.2rem 1rem;}
+      .menu-block-head{gap:.5rem;margin-bottom:.7rem;padding-bottom:.5rem;}
+      .menu-block-title{font-size:1.05rem;}
+      .menu-block-price{font-size:.75rem;padding:.2rem .65rem;}
+      .menu-block-note{font-size:.8rem;padding:.35rem .7rem;margin-bottom:.7rem;}
+      .menu-item-grid{grid-template-columns:repeat(2,1fr);gap:.3rem;}
+      .menu-item{font-size:.78rem;padding:.4rem .35rem;}
+      .menu-price-grid{grid-template-columns:1fr;gap:.3rem;}
+      .menu-price-row{font-size:.82rem;padding:.4rem .7rem;}
+      .menu-photos{grid-template-columns:repeat(2,1fr);gap:.35rem;}
     }
 
     /* ===== GALLERY ===== */
@@ -237,7 +252,7 @@
 
     [id^="cat-"]{scroll-margin-top:80px;}
     .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;}
-    @media(max-width:768px){.section{padding:3.5rem 0;}}
+    @media(max-width:768px){.section{padding:3rem 0;}.section-title{font-size:1.35rem;margin-bottom:.4rem;}.section-desc{font-size:.82rem;margin-bottom:1.8rem;}.cta-phone{font-size:1.8rem;}.cta-section h3{font-size:1.4rem;}.cta-section p{font-size:.85rem;}}
   </style>
 </head>
 <body>
@@ -427,7 +442,7 @@
         <!-- プレミアム串 -->
         <div id="cat-premium" class="menu-block premium fade-up">
           <div class="menu-block-head">
-            <h3 class="menu-block-title">🌟 数量限定プレミアム串</h3>
+            <h3 class="menu-block-title">数量限定プレミアム串</h3>
             <span class="menu-block-price">各 1,000円</span>
           </div>
           <div class="menu-item-grid">

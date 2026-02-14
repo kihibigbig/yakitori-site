@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kihibigbig.github.io/yakitori-site/sitemap.xml

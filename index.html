@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="所沢市上新井のテイクアウト専門焼き鳥店「ししとう」。一本90円の本格焼きとりから、お弁当・お惣菜・プレミアム串まで。毎日11:30〜21:00営業中。">
   <title>焼き鳥 ししとう｜所沢・上新井のテイクアウト専門店</title>
+  <link rel="canonical" href="https://kihibigbig.github.io/yakitori-site/">
   <link rel="icon" type="image/jpeg" href="assets/ロゴ.jpg">
   <link rel="apple-touch-icon" href="assets/ロゴ.jpg">
   <!-- OGP -->
@@ -778,6 +779,47 @@
 
     const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
     document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+  </script>
+
+  <!-- 構造化データ（Google検索結果用） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "焼き鳥 ししとう",
+    "alternateName": "お持ち帰りの専門 ししとう",
+    "description": "所沢市上新井のテイクアウト専門焼き鳥店。一本90円の本格焼きとりから、お弁当・お惣菜・プレミアム串まで。",
+    "url": "https://kihibigbig.github.io/yakitori-site/",
+    "telephone": "+81-70-9150-7039",
+    "servesCuisine": "焼き鳥",
+    "priceRange": "¥",
+    "currenciesAccepted": "JPY",
+    "paymentAccepted": "現金",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "上新井３丁目２２−３０",
+      "addressLocality": "所沢市",
+      "addressRegion": "埼玉県",
+      "postalCode": "359-1142",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.7793,
+      "longitude": 139.4627
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "11:30",
+      "closes": "21:00"
+    },
+    "image": "https://kihibigbig.github.io/yakitori-site/assets/%E3%83%AD%E3%82%B4.jpg",
+    "hasMenu": {
+      "@type": "Menu",
+      "url": "https://kihibigbig.github.io/yakitori-site/#menu"
+    }
+  }
   </script>
 </body>
 </html>

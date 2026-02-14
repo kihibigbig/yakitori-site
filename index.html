@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="所沢市上新井のテイクアウト専門焼き鳥店「ししとう」。一本90円の本格焼きとりから、お弁当・お惣菜・プレミアム串まで。毎日11:30〜21:00営業中。">
   <title>焼き鳥 ししとう｜所沢・上新井のテイクアウト専門店</title>
+  <link rel="icon" type="image/jpeg" href="assets/ロゴ.jpg">
+  <link rel="apple-touch-icon" href="assets/ロゴ.jpg">
+  <!-- OGP -->
+  <meta property="og:title" content="焼き鳥 ししとう｜所沢・上新井のテイクアウト専門店">
+  <meta property="og:description" content="所沢市上新井のテイクアウト専門焼き鳥店。一本90円の本格焼きとりから、お弁当・お惣菜・プレミアム串まで。毎日11:30〜21:00営業中。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/ロゴ.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="焼き鳥 ししとう｜所沢・上新井のテイクアウト専門店">
+  <meta name="twitter:description" content="所沢市上新井のテイクアウト専門焼き鳥店。一本90円の本格焼きとりから、お弁当・お惣菜・プレミアム串まで。">
+  <meta name="twitter:image" content="assets/ロゴ.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,13 +27,12 @@
       --gold:#C9A96E;--gold-light:#E8D5A8;--gold-pale:#F5EDD8;
       --bg:#FAF9F7;--bg-warm:#F3F0EA;--white:#fff;
       --dark:#1A1A1A;--dark-soft:#2D2D2D;
-      --text:#333;--text-muted:#777;--text-light:#aaa;
+      --text:#333;--text-muted:#777;
       --serif:'Shippori Mincho','Noto Serif JP',serif;
       --sans:'Noto Sans JP',sans-serif;
-      --shadow:0 4px 24px rgba(0,0,0,.06);
-      --shadow-md:0 8px 32px rgba(0,0,0,.10);
-      --shadow-lg:0 16px 48px rgba(0,0,0,.14);
-      --radius:10px;--radius-lg:16px;
+      --shadow:0 2px 12px rgba(0,0,0,.06);
+      --shadow-md:0 4px 20px rgba(0,0,0,.08);
+      --radius:10px;--radius-lg:14px;
     }
     *{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;font-size:16px;}
@@ -31,7 +42,7 @@
     img{max-width:100%;display:block;}
     .container{max-width:1100px;margin:0 auto;padding:0 1.25rem;}
     .serif{font-family:var(--serif);}
-    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+    .fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
     .fade-up.visible{opacity:1;transform:translateY(0);}
 
     /* ===== HEADER ===== */
@@ -40,8 +51,7 @@
     .header--scrolled{background:rgba(26,26,26,.96);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.15);}
     .header .container{display:flex;justify-content:space-between;align-items:center;height:64px;}
     .brand{display:flex;align-items:center;gap:.7rem;}
-    .brand-logo{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.2);background:#fff;padding:2px;}
-    .header--scrolled .brand-logo{border-color:var(--gold);}
+    .brand-logo{height:38px;width:auto;max-width:60px;border-radius:6px;object-fit:contain;background:#fff;padding:2px;}
     .brand-name{font-family:var(--serif);font-size:1.15rem;color:#fff;font-weight:700;letter-spacing:.06em;}
     .brand-sub{font-size:.65rem;color:rgba(255,255,255,.5);letter-spacing:.12em;margin-top:1px;}
     .nav-desktop{display:none;gap:1.8rem;}
@@ -54,16 +64,14 @@
     .nav-cta::after{display:none!important;}
     @media(min-width:768px){.nav-desktop{display:flex;align-items:center;}.hamburger{display:none!important;}}
 
-    /* Hamburger */
     .hamburger{width:28px;height:20px;position:relative;cursor:pointer;background:none;border:none;z-index:1002;}
-    .hamburger span{display:block;position:absolute;height:2px;width:100%;background:#fff;transition:.3s ease-in-out;}
+    .hamburger span{display:block;position:absolute;height:2px;width:100%;background:#fff;transition:.3s;}
     .hamburger span:nth-child(1){top:0;}
     .hamburger span:nth-child(2){top:9px;}
     .hamburger span:nth-child(3){top:18px;}
     .hamburger.open span:nth-child(1){top:9px;transform:rotate(135deg);background:var(--gold);}
     .hamburger.open span:nth-child(2){opacity:0;}
     .hamburger.open span:nth-child(3){top:9px;transform:rotate(-135deg);background:var(--gold);}
-
     .nav-mobile{position:fixed;top:0;right:0;bottom:0;width:80%;max-width:300px;background:var(--dark);z-index:1001;padding:5rem 2rem;transform:translateX(100%);transition:transform .4s cubic-bezier(.77,.2,.05,1);}
     .nav-mobile.open{transform:translateX(0);}
     .nav-mobile a{display:block;padding:.9rem 0;font-size:1rem;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.08);}
@@ -87,32 +95,23 @@
     .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,169,110,.3);}
     .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25);}
     .btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
-    .hero-visual{position:relative;display:flex;justify-content:center;}
-    .hero-img-main{width:85%;max-width:400px;border-radius:var(--radius-lg);box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.05);}
-    .hero-img-float{position:absolute;width:45%;max-width:180px;border-radius:var(--radius);box-shadow:0 20px 50px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.05);}
-    .hero-img-float--1{bottom:-10%;left:-5%;animation:float 6s ease-in-out infinite;}
-    .hero-img-float--2{top:-5%;right:-5%;animation:float 6s ease-in-out infinite 3s;}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-
+    .hero-visual{display:flex;justify-content:center;align-items:center;}
+    .hero-img-main{width:85%;max-width:420px;border-radius:var(--radius-lg);box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.05);}
     @media(max-width:768px){
       .hero .container{grid-template-columns:1fr;text-align:center;padding-top:100px;}
       .hero-visual{order:-1;margin-bottom:1rem;}
-      .hero-img-main{width:60%;max-width:260px;}
-      .hero-img-float{width:35%;max-width:120px;}
-      .hero-img-float--1{bottom:0;left:5%;}
-      .hero-img-float--2{top:0;right:5%;}
+      .hero-img-main{width:65%;max-width:280px;}
       .hero-actions{justify-content:center;}
     }
 
     /* ===== HIGHLIGHTS ===== */
     .highlights{position:relative;z-index:10;margin-top:-3rem;}
-    .highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);}
-    .highlight-card{padding:2rem 1.5rem;text-align:center;background:var(--white);transition:all .3s;}
-    .highlight-card:hover{background:var(--gold-pale);}
+    .highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.1);}
+    .highlight-card{padding:2rem 1.5rem;text-align:center;background:var(--white);}
     .highlight-num{font-family:var(--serif);font-size:2.2rem;font-weight:800;color:var(--crimson);line-height:1;}
     .highlight-unit{font-size:.9rem;color:var(--crimson);}
     .highlight-label{font-size:.85rem;color:var(--text-muted);margin-top:.4rem;}
-    @media(max-width:600px){.highlights-grid{grid-template-columns:1fr;}.highlight-card{padding:1.2rem;display:flex;align-items:center;gap:1rem;text-align:left;}.highlight-card>div:first-child{min-width:80px;}}
+    @media(max-width:600px){.highlights-grid{grid-template-columns:1fr;}.highlight-card{padding:1rem;display:flex;align-items:center;gap:1rem;text-align:left;}.highlight-card>div:first-child{min-width:80px;}}
 
     /* ===== SECTION COMMON ===== */
     .section{padding:5rem 0;}
@@ -123,7 +122,7 @@
     /* ===== ABOUT ===== */
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
     .about-img-wrap{position:relative;}
-    .about-img{border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);width:100%;aspect-ratio:4/3;object-fit:cover;}
+    .about-img{border-radius:var(--radius-lg);box-shadow:0 8px 32px rgba(0,0,0,.12);width:100%;aspect-ratio:4/3;object-fit:cover;}
     .about-img-accent{position:absolute;bottom:-1.5rem;right:-1.5rem;width:40%;border-radius:var(--radius);box-shadow:var(--shadow-md);border:4px solid var(--bg);}
     .about-text h3{font-family:var(--serif);font-size:1.6rem;line-height:1.6;margin-bottom:1.5rem;position:relative;padding-left:1.2rem;}
     .about-text h3::before{content:'';position:absolute;left:0;top:.3rem;bottom:.3rem;width:3px;background:var(--gold);border-radius:2px;}
@@ -132,76 +131,64 @@
     @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:2rem;}.about-img-accent{width:35%;bottom:-1rem;right:-1rem;}}
 
     /* ===== MENU SECTION ===== */
-    .menu-section{background:#EDE8DF;}
+    .menu-section{background:#EDE8DF;padding-bottom:4rem;}
 
-    /* Menu Nav (Tab Buttons) */
-    .menu-nav{display:flex;justify-content:center;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap;}
-    .menu-nav-btn{padding:.7rem 1.6rem;border:2px solid #ccc;border-radius:50px;font-size:.95rem;font-weight:600;background:var(--white);color:var(--text);cursor:pointer;transition:all .3s;font-family:var(--sans);box-shadow:0 2px 8px rgba(0,0,0,.04);}
-    .menu-nav-btn:hover{border-color:var(--crimson);color:var(--crimson);box-shadow:0 4px 12px rgba(139,26,43,.1);}
-    .menu-nav-btn.active{background:var(--crimson);color:#fff;border-color:var(--crimson);box-shadow:0 4px 16px rgba(139,26,43,.25);}
+    /* Menu Nav (目次) */
+    .menu-nav{background:var(--white);border-radius:var(--radius-lg);padding:1.5rem 2rem;margin-bottom:2rem;box-shadow:var(--shadow);}
+    .menu-nav-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem;}
+    .menu-nav-list{display:flex;flex-wrap:wrap;gap:.5rem;}
+    .menu-nav-chip{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem 1rem;background:#F8F6F2;border:1px solid #e8e4dc;border-radius:50px;font-size:.85rem;color:var(--dark);font-weight:500;transition:all .25s;cursor:pointer;white-space:nowrap;}
+    .menu-nav-chip:hover{background:var(--crimson);color:#fff;border-color:var(--crimson);transform:translateY(-1px);box-shadow:0 3px 10px rgba(139,26,43,.15);}
+    .menu-nav-chip .chip-price{font-size:.75rem;color:var(--text-muted);font-weight:400;}
+    .menu-nav-chip:hover .chip-price{color:rgba(255,255,255,.7);}
 
-    /* Menu Tab Content */
-    .menu-tab{display:none;}
-    .menu-tab.active{display:block;}
+    /* Menu Block - uniform card for every category */
+    .menu-block{background:var(--white);border-radius:var(--radius-lg);padding:2rem 2.5rem;margin-bottom:1.2rem;box-shadow:var(--shadow);}
+    .menu-block-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:2px solid var(--gold);}
+    .menu-block-title{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--dark);}
+    .menu-block-price{background:var(--crimson);color:#fff;padding:.25rem .9rem;border-radius:50px;font-size:.85rem;font-weight:700;white-space:nowrap;}
+    .menu-block-note{font-size:.88rem;color:var(--text);background:var(--gold-pale);padding:.5rem 1rem;border-radius:6px;margin-bottom:1rem;border-left:3px solid var(--gold);}
+    .menu-block-note strong{color:var(--crimson);}
 
-    /* Menu Group */
-    .menu-group{margin-bottom:3rem;}
-    .menu-group-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:.8rem;border-bottom:2px solid var(--gold);}
-    .menu-group-title{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--dark);}
-    .menu-group-price{font-size:.9rem;font-weight:700;color:#fff;background:var(--crimson);padding:.3rem 1rem;border-radius:50px;white-space:nowrap;}
+    /* Uniform item grid - all items same look */
+    .menu-item-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.5rem;}
+    .menu-item{padding:.55rem .8rem;background:#F8F6F2;border-radius:6px;font-size:.95rem;text-align:center;color:var(--dark);border:1px solid #ece8e0;}
 
-    /* Menu Card with Photo */
-    .menu-photo-card{display:grid;grid-template-columns:2fr 3fr;gap:0;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:2rem;border:1px solid rgba(0,0,0,.04);}
-    .menu-photo-card img{width:100%;height:100%;object-fit:cover;min-height:280px;}
-    .menu-photo-card .menu-card-body{padding:2rem 2.5rem;}
-    @media(max-width:768px){.menu-photo-card{grid-template-columns:1fr;}.menu-photo-card img{max-height:240px;}.menu-photo-card .menu-card-body{padding:1.5rem;}}
+    /* Price list - for items with individual prices */
+    .menu-price-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.5rem;}
+    .menu-price-row{display:flex;justify-content:space-between;align-items:center;padding:.55rem 1rem;background:#F8F6F2;border-radius:6px;font-size:.95rem;border:1px solid #ece8e0;}
+    .menu-price-row .price{color:var(--crimson);font-weight:700;white-space:nowrap;margin-left:.5rem;}
 
-    /* Menu Items Grid */
-    .menu-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
-    .menu-card{background:var(--white);border-radius:var(--radius);padding:1.8rem;box-shadow:var(--shadow-md);transition:all .3s;border:1px solid rgba(0,0,0,.04);}
-    .menu-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--gold-light);}
-    .menu-card h4{font-family:var(--serif);font-size:1.2rem;color:var(--dark);margin-bottom:1.2rem;display:flex;justify-content:space-between;align-items:center;padding-bottom:.7rem;border-bottom:2px solid #eee;}
-    .menu-card .price-badge{font-size:.85rem;font-weight:700;color:#fff;background:var(--crimson);padding:.25rem .7rem;border-radius:4px;white-space:nowrap;}
+    /* Photo strip */
+    .menu-photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.6rem;margin-bottom:1.2rem;}
+    .menu-photos img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);}
 
-    /* Premium Card */
-    .menu-card.premium{background:linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 100%);color:#fff;border:1px solid rgba(201,169,110,.3);}
-    .menu-card.premium h4{color:var(--gold);border-bottom-color:rgba(255,255,255,.1);}
-    .menu-card.premium .price-badge{background:var(--gold);color:var(--dark);}
-    .menu-card.premium .menu-list li{color:rgba(255,255,255,.8);}
-    .menu-card.premium .menu-list li::before{color:var(--gold);}
+    /* Premium block */
+    .menu-block.premium{background:linear-gradient(135deg,#1a1a1a,#2a2a2a);border:1px solid rgba(201,169,110,.3);}
+    .menu-block.premium .menu-block-head{border-bottom-color:rgba(201,169,110,.5);}
+    .menu-block.premium .menu-block-title{color:var(--gold);}
+    .menu-block.premium .menu-block-price{background:var(--gold);color:var(--dark);}
+    .menu-block.premium .menu-item{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.1);}
 
-    .menu-list li{position:relative;padding-left:1.2rem;margin-bottom:.65rem;font-size:1rem;display:flex;justify-content:space-between;align-items:baseline;line-height:1.6;}
-    .menu-list li::before{content:'';position:absolute;left:0;top:.65em;width:6px;height:6px;background:var(--gold);border-radius:50%;}
-    .menu-list li .item-price{font-weight:700;color:var(--crimson);white-space:nowrap;margin-left:1rem;font-size:1.05rem;}
-
-    /* Tag Grid (for dips, snacks) */
-    .tag-grid{display:flex;flex-wrap:wrap;gap:.5rem;}
-    .tag{display:inline-block;padding:.5rem 1rem;background:var(--white);border:1.5px solid #d0d0d0;border-radius:50px;font-size:.92rem;font-weight:500;color:var(--dark);transition:all .2s;box-shadow:0 1px 4px rgba(0,0,0,.04);}
-    .tag:hover{border-color:var(--gold);background:var(--gold-pale);box-shadow:0 2px 8px rgba(201,169,110,.15);}
-
-    /* Compact List (for sides) */
-    .compact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.8rem;}
-    .compact-item{background:var(--white);padding:.8rem 1.2rem;border-radius:8px;font-size:.95rem;display:flex;justify-content:space-between;align-items:center;border:1px solid #e0e0e0;box-shadow:0 1px 4px rgba(0,0,0,.03);transition:all .2s;}
-    .compact-item:hover{border-color:var(--gold-light);box-shadow:0 2px 8px rgba(0,0,0,.06);}
-    .compact-item .cp-price{font-weight:700;color:var(--crimson);font-size:.95rem;}
-
-    /* Menu Note */
-    .menu-note{font-size:.88rem;color:var(--text);background:rgba(201,169,110,.12);padding:.7rem 1.2rem;border-radius:8px;margin-top:.8rem;line-height:1.7;border-left:3px solid var(--gold);}
-    .menu-note strong{color:var(--crimson);font-weight:700;}
+    @media(max-width:600px){
+      .menu-block{padding:1.5rem 1.2rem;}
+      .menu-item-grid{grid-template-columns:repeat(2,1fr);}
+      .menu-price-grid{grid-template-columns:1fr;}
+    }
 
     /* ===== GALLERY ===== */
     .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;}
     .gallery-item{position:relative;overflow:hidden;border-radius:var(--radius);aspect-ratio:1;cursor:pointer;}
     .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
     .gallery-item:hover img{transform:scale(1.08);}
-    .gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.4) 0%,transparent 50%);opacity:0;transition:opacity .3s;}
+    .gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5) 0%,transparent 50%);opacity:0;transition:opacity .3s;}
     .gallery-item:hover::after{opacity:1;}
     .gallery-item span{position:absolute;bottom:.8rem;left:.8rem;color:#fff;font-size:.8rem;font-weight:500;z-index:2;opacity:0;transform:translateY(6px);transition:all .3s;}
     .gallery-item:hover span{opacity:1;transform:translateY(0);}
     @media(max-width:600px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
 
     /* ===== ACCESS ===== */
-    .access-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);}
+    .access-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);}
     .access-card-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;}
     .access-info{padding:2.5rem;}
     .access-info h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:1.5rem;color:var(--dark);}
@@ -211,7 +198,7 @@
     .access-table td{padding:.9rem 0;font-size:.92rem;color:var(--text);}
     .access-table a{color:var(--crimson);font-weight:600;}
     .access-table a:hover{text-decoration:underline;}
-    .access-visual{position:relative;background:#f0ece4;display:flex;flex-direction:column;min-height:300px;}
+    .access-visual{display:flex;flex-direction:column;min-height:300px;background:#f0ece4;}
     .access-visual iframe{width:100%;flex:1;border:none;min-height:300px;}
     .access-map-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.7rem 1.5rem;background:var(--white);color:var(--dark);font-weight:600;font-size:.85rem;border-top:1px solid #e0e0e0;transition:all .3s;white-space:nowrap;}
     .access-map-btn:hover{background:var(--gold-pale);color:var(--crimson);}
@@ -240,17 +227,15 @@
     .footer{background:var(--dark);color:rgba(255,255,255,.5);padding:3rem 0 1.5rem;font-size:.85rem;}
     .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08);}
     .footer-brand{display:flex;align-items:center;gap:.7rem;}
-    .footer-brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;background:#fff;padding:2px;border:1px solid rgba(255,255,255,.15);}
+    .footer-brand img{height:36px;width:auto;max-width:56px;border-radius:6px;object-fit:contain;background:#fff;padding:2px;}
     .footer-brand h4{color:#fff;font-family:var(--serif);font-size:1.1rem;}
     .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
     .footer-links a{color:rgba(255,255,255,.5);font-size:.82rem;transition:color .3s;}
     .footer-links a:hover{color:var(--gold);}
     .copyright{text-align:center;font-size:.75rem;color:rgba(255,255,255,.3);}
 
-    /* ===== MATERIAL ICONS ===== */
+    [id^="cat-"]{scroll-margin-top:80px;}
     .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;}
-
-    /* ===== UTILITIES ===== */
     @media(max-width:768px){.section{padding:3.5rem 0;}}
   </style>
 </head>
@@ -309,8 +294,6 @@
         </div>
         <div class="hero-visual fade-up">
           <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6052.jpeg" alt="焼き鳥の盛り合わせ" class="hero-img-main">
-          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6495.jpeg" alt="プレミアム串" class="hero-img-float hero-img-float--1">
-          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6083.jpeg" alt="やきとん" class="hero-img-float hero-img-float--2">
         </div>
       </div>
     </section>
@@ -353,340 +336,288 @@
       </div>
     </section>
 
-    <!-- ======== MENU ======== -->
+    <!-- ======== MENU (全品一覧) ======== -->
     <section id="menu" class="section menu-section">
       <div class="container">
         <span class="section-label fade-up">Menu</span>
         <h2 class="section-title fade-up">お品書き</h2>
         <p class="section-desc fade-up">※価格はすべて税込です</p>
 
-        <!-- Tab Navigation -->
+        <!-- メニュー目次ナビ -->
         <div class="menu-nav fade-up">
-          <button class="menu-nav-btn active" data-tab="tab-kushi">串もの</button>
-          <button class="menu-nav-btn" data-tab="tab-bento">お弁当・ご飯</button>
-          <button class="menu-nav-btn" data-tab="tab-deli">デリ・お惣菜</button>
-          <button class="menu-nav-btn" data-tab="tab-oyatsu">おやつ・ドリンク</button>
-        </div>
-
-        <!-- ===== TAB: 串もの ===== -->
-        <div class="menu-tab active" id="tab-kushi">
-
-          <!-- 焼きとり -->
-          <div class="menu-photo-card fade-up">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6052.jpeg" alt="焼きとり盛り合わせ">
-            <div class="menu-card-body">
-              <div class="menu-group-header">
-                <h3 class="menu-group-title">焼きとり</h3>
-                <span class="menu-group-price">各 90円</span>
-              </div>
-              <p class="menu-note">選べるお味：<strong>塩 / タレ / 塩なし</strong></p>
-              <ul class="menu-list" style="margin-top:1rem;">
-                <li><span>もも</span></li>
-                <li><span>ねぎま</span></li>
-                <li><span>つくね</span></li>
-                <li><span>かわやわ焼き</span></li>
-                <li><span>かわカリ焼き</span></li>
-                <li><span>むね</span></li>
-                <li><span>ハツ</span></li>
-                <li><span>レバー</span></li>
-                <li><span>砂肝</span></li>
-                <li><span>ぼんじり</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- 串焼き -->
-          <div class="menu-group fade-up">
-            <div class="menu-group-header">
-              <h3 class="menu-group-title">串焼き</h3>
-              <span class="menu-group-price">各 90円</span>
-            </div>
-            <div class="tag-grid">
-              <span class="tag">焼きタマゴ</span>
-              <span class="tag">うずら塩</span>
-              <span class="tag">うずらタレ</span>
-              <span class="tag">ぎんなん</span>
-              <span class="tag">ししとう</span>
-              <span class="tag">にんにく</span>
-              <span class="tag">長ネギ</span>
-              <span class="tag">ベビーコーン</span>
-            </div>
-          </div>
-
-          <!-- やきとん -->
-          <div class="menu-photo-card fade-up">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6083.jpeg" alt="やきとん盛り合わせ">
-            <div class="menu-card-body">
-              <div class="menu-group-header">
-                <h3 class="menu-group-title">やきとん</h3>
-                <span class="menu-group-price">各 150円</span>
-              </div>
-              <p class="menu-note">選べるお味：<strong>塩 / タレ / 塩なし</strong></p>
-              <ul class="menu-list" style="margin-top:1rem;">
-                <li><span>豚バラ</span></li>
-                <li><span>豚ねぎま</span></li>
-                <li><span>豚かしら</span></li>
-                <li><span>豚トロ</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- プレミアム串 -->
-          <div class="menu-items fade-up">
-            <article class="menu-card premium">
-              <h4>
-                <span>🌟 数量限定プレミアム串</span>
-                <span class="price-badge">各 1,000円</span>
-              </h4>
-              <ul class="menu-list">
-                <li><span>フォワグラと鶏もも肉</span></li>
-                <li><span>フォワグラとつくね</span></li>
-              </ul>
-            </article>
-          </div>
-
-          <!-- 味変ディップ -->
-          <div class="menu-group fade-up" style="margin-top:2rem;">
-            <div class="menu-group-header">
-              <h3 class="menu-group-title">味変ディップ</h3>
-              <span class="menu-group-price">各 100円</span>
-            </div>
-            <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1rem;">＼ 美味しさ2倍！お好きな串に付けてお楽しみください ／</p>
-            <div class="tag-grid">
-              <span class="tag">温泉卵</span>
-              <span class="tag">東松山名物からみそ</span>
-              <span class="tag">タルタルソース</span>
-              <span class="tag">梅マヨネーズ</span>
-              <span class="tag">わさびマヨネーズ</span>
-              <span class="tag">明太子マヨネーズ</span>
-              <span class="tag">コチジャンマヨネーズ</span>
-              <span class="tag">具沢山ラー油</span>
-              <span class="tag">スイートチリソース</span>
-              <span class="tag">油林鶏ソース</span>
-              <span class="tag">バジルソース</span>
-              <span class="tag">オリジナル七味</span>
-              <span class="tag">ガーリックチップ</span>
-              <span class="tag">トリュフ塩</span>
-              <span class="tag">フランス産フルール・ド・セル</span>
-              <span class="tag">柚子胡椒</span>
-              <span class="tag">からし</span>
-              <span class="tag">ハラペーニョ</span>
-            </div>
+          <div class="menu-nav-title"><span class="material-symbols-outlined" style="font-size:1.1rem;color:var(--gold);">restaurant_menu</span> ラインナップ</div>
+          <div class="menu-nav-list">
+            <a href="#cat-yakitori" class="menu-nav-chip">焼きとり <span class="chip-price">90円</span></a>
+            <a href="#cat-kushiyaki" class="menu-nav-chip">串焼き <span class="chip-price">90円</span></a>
+            <a href="#cat-yakiton" class="menu-nav-chip">やきとん <span class="chip-price">150円</span></a>
+            <a href="#cat-premium" class="menu-nav-chip">プレミアム串 <span class="chip-price">1,000円</span></a>
+            <a href="#cat-dip" class="menu-nav-chip">味変ディップ <span class="chip-price">100円</span></a>
+            <a href="#cat-bento" class="menu-nav-chip">お弁当 <span class="chip-price">500円</span></a>
+            <a href="#cat-gohan" class="menu-nav-chip">ご飯もの・汁物</a>
+            <a href="#cat-dashimaki" class="menu-nav-chip">だし巻き玉子</a>
+            <a href="#cat-deli" class="menu-nav-chip">カップデリ <span class="chip-price">350円</span></a>
+            <a href="#cat-sozai" class="menu-nav-chip">お惣菜 <span class="chip-price">500円</span></a>
+            <a href="#cat-oyatsu" class="menu-nav-chip">おやつ <span class="chip-price">150円</span></a>
+            <a href="#cat-drink" class="menu-nav-chip">ドリンク</a>
           </div>
         </div>
 
-        <!-- ===== TAB: お弁当・ご飯 ===== -->
-        <div class="menu-tab" id="tab-bento">
+        <!-- 写真ストリップ（串もの） -->
+        <div class="menu-photos fade-up">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6052.jpeg" alt="焼きとり盛り合わせ">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6083.jpeg" alt="やきとん">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6495.jpeg" alt="プレミアム串">
+        </div>
 
-          <!-- お弁当 -->
-          <div class="menu-photo-card fade-up">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6082.jpeg" alt="お弁当2種">
-            <div class="menu-card-body">
-              <div class="menu-group-header">
-                <h3 class="menu-group-title">お弁当</h3>
-                <span class="menu-group-price">各 500円</span>
-              </div>
-              <ul class="menu-list">
-                <li><span>焼き鳥そぼろ丼</span></li>
-                <li><span>焼き鳥屋のカレー</span></li>
-                <li><span>チキンライス（シンガポール風）</span></li>
-                <li><span>タイ風ガパオライス</span></li>
-              </ul>
-              <p class="menu-note" style="margin-top:1rem;">
-                <strong>ご飯&amp;具も大盛り +200円</strong><br>
-                +100円トッピング：温泉卵 or ゆでたまご
-              </p>
-            </div>
+        <!-- 焼きとり -->
+        <div id="cat-yakitori" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">焼きとり</h3>
+            <span class="menu-block-price">各 90円</span>
           </div>
-
-          <!-- 個別お弁当写真 -->
-          <div class="fade-up" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;">
-            <div style="border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);">
-              <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6076.jpeg" alt="チキンライス（シンガポール風）" style="width:100%;aspect-ratio:1;object-fit:cover;">
-              <div style="padding:.6rem .8rem;background:#fff;font-size:.82rem;text-align:center;font-weight:500;">チキンライス</div>
-            </div>
-            <div style="border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);">
-              <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6077.jpeg" alt="タイ風ガパオライス" style="width:100%;aspect-ratio:1;object-fit:cover;">
-              <div style="padding:.6rem .8rem;background:#fff;font-size:.82rem;text-align:center;font-weight:500;">ガパオライス</div>
-            </div>
-            <div style="border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);">
-              <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6079.jpeg" alt="焼き鳥屋のカレー" style="width:100%;aspect-ratio:1;object-fit:cover;">
-              <div style="padding:.6rem .8rem;background:#fff;font-size:.82rem;text-align:center;font-weight:500;">焼き鳥屋のカレー</div>
-            </div>
-          </div>
-
-          <!-- ご飯もの・汁物 -->
-          <div class="menu-group fade-up">
-            <div class="menu-group-header">
-              <h3 class="menu-group-title">ご飯もの・汁物</h3>
-            </div>
-            <div class="compact-grid">
-              <div class="compact-item"><span>中華ちまき 小</span><span class="cp-price">250円</span></div>
-              <div class="compact-item"><span>中華ちまき 中（豚角煮入り）</span><span class="cp-price">350円</span></div>
-              <div class="compact-item"><span>単品 ご飯</span><span class="cp-price">250円</span></div>
-              <div class="compact-item"><span>単品 ご飯大盛り</span><span class="cp-price">350円</span></div>
-              <div class="compact-item"><span>カップ味噌汁 各種</span><span class="cp-price">200円</span></div>
-            </div>
-            <p class="menu-note">味噌汁：あおさ / 赤だし / あさり / 豚汁</p>
-          </div>
-
-          <!-- 京風だし巻き玉子 -->
-          <div class="menu-photo-card fade-up" style="margin-top:2rem;">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6695.jpeg" alt="京風だし巻き玉子（ネギ入り）">
-            <div class="menu-card-body">
-              <div class="menu-group-header">
-                <h3 class="menu-group-title">京風だし巻き玉子</h3>
-              </div>
-              <p class="menu-note" style="margin-bottom:1rem;">🕐 焼き上がり：<strong>11時〜 / 15時〜 / 17時〜</strong></p>
-              <ul class="menu-list">
-                <li><span>だし巻き玉子</span><span class="item-price">600円</span></li>
-                <li><span>だし巻き玉子 ネギ入り</span><span class="item-price">800円</span></li>
-                <li><span>だし巻き玉子 そぼろ入り</span><span class="item-price">800円</span></li>
-              </ul>
-            </div>
-          </div>
-          <div style="display:flex;gap:.8rem;margin-top:1rem;" class="fade-up">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6701.jpeg" alt="だし巻き玉子（そぼろ入り）" style="width:50%;border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:16/10;object-fit:cover;">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6695.jpeg" alt="だし巻き玉子（ネギ入り）" style="width:50%;border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:16/10;object-fit:cover;">
+          <p class="menu-block-note">選べるお味：<strong>塩 / タレ / 塩なし</strong></p>
+          <div class="menu-item-grid">
+            <span class="menu-item">もも</span>
+            <span class="menu-item">ねぎま</span>
+            <span class="menu-item">つくね</span>
+            <span class="menu-item">かわやわ焼き</span>
+            <span class="menu-item">かわカリ焼き</span>
+            <span class="menu-item">むね</span>
+            <span class="menu-item">ハツ</span>
+            <span class="menu-item">レバー</span>
+            <span class="menu-item">砂肝</span>
+            <span class="menu-item">ぼんじり</span>
           </div>
         </div>
 
-        <!-- ===== TAB: デリ・お惣菜 ===== -->
-        <div class="menu-tab" id="tab-deli">
-
-          <!-- カップデリ -->
-          <div class="menu-photo-card fade-up">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6055.jpeg" alt="カップデリ3種盛り">
-            <div class="menu-card-body">
-              <div class="menu-group-header">
-                <h3 class="menu-group-title">カップデリ</h3>
-                <span class="menu-group-price">各 350円</span>
-              </div>
-              <ul class="menu-list">
-                <li><span>紀州南高梅のハチミツ梅</span></li>
-                <li><span>よだれ鶏 / 棒棒鶏</span></li>
-                <li><span>蒸し鶏の油林鶏</span></li>
-                <li><span>バジルぽてとチキン</span></li>
-                <li><span>枝豆 トリュフの香り</span></li>
-                <li><span>鶏皮ぽん酢</span></li>
-              </ul>
-            </div>
+        <!-- 串焼き -->
+        <div id="cat-kushiyaki" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">串焼き</h3>
+            <span class="menu-block-price">各 90円</span>
           </div>
-
-          <!-- カップデリ写真 -->
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0 2.5rem;" class="fade-up">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6704.jpeg" alt="カップデリ" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6707.jpeg" alt="カップデリ" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6055.jpeg" alt="カップデリ3種" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
-          </div>
-
-          <!-- お惣菜 -->
-          <div class="menu-photo-card fade-up">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6694.jpeg" alt="鶏の照り焼き タルタルソース">
-            <div class="menu-card-body">
-              <div class="menu-group-header">
-                <h3 class="menu-group-title">お惣菜</h3>
-                <span class="menu-group-price">各 500円</span>
-              </div>
-              <ul class="menu-list">
-                <li><span>鶏おでん8種</span></li>
-                <li><span>やげんナンコツの塩焼き</span></li>
-                <li><span>韓国風とり手羽先の旨辛焼き</span></li>
-                <li><span>鶏豚みそモツ煮</span></li>
-                <li><span>鶏皮とキンカンの甘辛煮</span></li>
-                <li><span>鶏の照り焼き タルタルソース</span></li>
-                <li><span>グリルソーセージ3種盛り</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- お惣菜写真ギャラリー -->
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:1.5rem;" class="fade-up">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6063.jpeg" alt="韓国風とり手羽先の旨辛焼き" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6530.jpeg" alt="グリルソーセージ3種盛り" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6714.jpeg" alt="お惣菜" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6719.jpeg" alt="鶏皮とキンカンの甘辛煮" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);">
+          <div class="menu-item-grid">
+            <span class="menu-item">焼きタマゴ</span>
+            <span class="menu-item">うずら塩</span>
+            <span class="menu-item">うずらタレ</span>
+            <span class="menu-item">ぎんなん</span>
+            <span class="menu-item">ししとう</span>
+            <span class="menu-item">にんにく</span>
+            <span class="menu-item">長ネギ</span>
+            <span class="menu-item">ベビーコーン</span>
           </div>
         </div>
 
-        <!-- ===== TAB: おやつ・ドリンク ===== -->
-        <div class="menu-tab" id="tab-oyatsu">
-
-          <!-- おやつ -->
-          <div class="menu-group fade-up">
-            <div class="menu-group-header">
-              <h3 class="menu-group-title">おやつ</h3>
-              <span class="menu-group-price">各 150円</span>
-            </div>
-            <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1.2rem;">★ 小腹がすいたらコレ！学校帰りや、お酒のお供にもピッタリ ★</p>
-
-            <div class="menu-items">
-              <article class="menu-card">
-                <h4>ごはん系・ガッツリ</h4>
-                <ul class="menu-list">
-                  <li><span>焼きおにぎり 深井醤油</span></li>
-                  <li><span>焼きおにぎり フルール・ド・セル</span></li>
-                  <li><span>焼きおにぎり 味噌</span></li>
-                  <li><span>焼きおにぎり ガーリック</span></li>
-                </ul>
-              </article>
-              <article class="menu-card">
-                <h4>串モノ・人気者</h4>
-                <ul class="menu-list">
-                  <li><span>とりマヨ明太子</span></li>
-                  <li><span>とりマヨ梅</span></li>
-                  <li><span>とりマヨわさび</span></li>
-                  <li><span>とりマヨコチジャン</span></li>
-                  <li><span>アスパラベーコン</span></li>
-                  <li><span>焼きトウモロコシ</span></li>
-                  <li><span>フランク先輩</span></li>
-                  <li><span>タコさんウインナー</span></li>
-                  <li><span>ナルトちゃん</span></li>
-                  <li><span>チーかま君</span></li>
-                  <li><span>帆立バター醤油</span></li>
-                  <li><span>エビマヨ串</span></li>
-                  <li><span>イカ焼き串</span></li>
-                </ul>
-              </article>
-              <article class="menu-card">
-                <h4>ポテト系 &amp; あまいもの</h4>
-                <ul class="menu-list">
-                  <li><span>ハッシュドポテト</span></li>
-                  <li><span>じゃがバター</span></li>
-                  <li><span>じゃがアンチョビ</span></li>
-                </ul>
-                <div style="margin-top:1rem;padding-top:.8rem;border-top:1px solid #eee;">
-                  <ul class="menu-list">
-                    <li><span>プチ桃まん</span></li>
-                    <li><span>焼きいも大学</span></li>
-                    <li><span>焼きりんごのタルト</span></li>
-                    <li><span>焼きパイナップルのタルト</span></li>
-                    <li><span>焼きマシュマロのタルト</span></li>
-                  </ul>
-                </div>
-              </article>
-            </div>
+        <!-- やきとん -->
+        <div id="cat-yakiton" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">やきとん</h3>
+            <span class="menu-block-price">各 150円</span>
           </div>
+          <p class="menu-block-note">選べるお味：<strong>塩 / タレ / 塩なし</strong></p>
+          <div class="menu-item-grid">
+            <span class="menu-item">豚バラ</span>
+            <span class="menu-item">豚ねぎま</span>
+            <span class="menu-item">豚かしら</span>
+            <span class="menu-item">豚トロ</span>
+          </div>
+        </div>
 
-          <!-- ドリンク -->
-          <div class="menu-group fade-up" style="margin-top:2rem;">
-            <div class="menu-group-header">
-              <h3 class="menu-group-title">ドリンク</h3>
-            </div>
-            <div class="compact-grid">
-              <div class="compact-item"><span>ビール</span><span class="cp-price">350円</span></div>
-              <div class="compact-item"><span>チューハイ</span><span class="cp-price">350円</span></div>
-              <div class="compact-item"><span>ハイボール</span><span class="cp-price">350円</span></div>
-              <div class="compact-item"><span>黒ウーロン茶</span><span class="cp-price">250円</span></div>
-              <div class="compact-item"><span>レッドブル</span><span class="cp-price">250円</span></div>
-              <div class="compact-item"><span>ラムネ</span><span class="cp-price">250円</span></div>
-              <div class="compact-item"><span>コーラ</span><span class="cp-price">200円</span></div>
-              <div class="compact-item"><span>ジンジャーエール</span><span class="cp-price">200円</span></div>
-              <div class="compact-item"><span>オレンジジュース</span><span class="cp-price">200円</span></div>
-              <div class="compact-item"><span>おーいお茶</span><span class="cp-price">200円</span></div>
-              <div class="compact-item"><span>コーヒー (Hot/Ice)</span><span class="cp-price">100円</span></div>
-              <div class="compact-item"><span>紅茶 (Hot/Ice)</span><span class="cp-price">100円</span></div>
-            </div>
+        <!-- プレミアム串 -->
+        <div id="cat-premium" class="menu-block premium fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">🌟 数量限定プレミアム串</h3>
+            <span class="menu-block-price">各 1,000円</span>
+          </div>
+          <div class="menu-item-grid">
+            <span class="menu-item">フォワグラと鶏もも肉</span>
+            <span class="menu-item">フォワグラとつくね</span>
+          </div>
+        </div>
+
+        <!-- 味変ディップ -->
+        <div id="cat-dip" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">味変ディップ</h3>
+            <span class="menu-block-price">各 100円</span>
+          </div>
+          <p class="menu-block-note">お好きな串に付けてお楽しみください</p>
+          <div class="menu-item-grid">
+            <span class="menu-item">温泉卵</span>
+            <span class="menu-item">東松山名物からみそ</span>
+            <span class="menu-item">タルタルソース</span>
+            <span class="menu-item">梅マヨネーズ</span>
+            <span class="menu-item">わさびマヨネーズ</span>
+            <span class="menu-item">明太子マヨネーズ</span>
+            <span class="menu-item">コチジャンマヨネーズ</span>
+            <span class="menu-item">具沢山ラー油</span>
+            <span class="menu-item">スイートチリソース</span>
+            <span class="menu-item">油林鶏ソース</span>
+            <span class="menu-item">バジルソース</span>
+            <span class="menu-item">オリジナル七味</span>
+            <span class="menu-item">ガーリックチップ</span>
+            <span class="menu-item">トリュフ塩</span>
+            <span class="menu-item">フランス産フルール・ド・セル</span>
+            <span class="menu-item">柚子胡椒</span>
+            <span class="menu-item">からし</span>
+            <span class="menu-item">ハラペーニョ</span>
+          </div>
+        </div>
+
+        <!-- 写真ストリップ（お弁当） -->
+        <div class="menu-photos fade-up">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6082.jpeg" alt="お弁当">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6076.jpeg" alt="チキンライス">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6077.jpeg" alt="ガパオライス">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6079.jpeg" alt="焼き鳥屋のカレー">
+        </div>
+
+        <!-- お弁当 -->
+        <div id="cat-bento" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">お弁当</h3>
+            <span class="menu-block-price">各 500円</span>
+          </div>
+          <p class="menu-block-note"><strong>ご飯&amp;具も大盛り +200円</strong>　／　+100円トッピング：温泉卵 or ゆでたまご</p>
+          <div class="menu-item-grid">
+            <span class="menu-item">焼き鳥そぼろ丼</span>
+            <span class="menu-item">焼き鳥屋のカレー</span>
+            <span class="menu-item">チキンライス（シンガポール風）</span>
+            <span class="menu-item">タイ風ガパオライス</span>
+          </div>
+        </div>
+
+        <!-- ご飯もの・汁物 -->
+        <div id="cat-gohan" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">ご飯もの・汁物</h3>
+          </div>
+          <div class="menu-price-grid">
+            <div class="menu-price-row"><span>中華ちまき 小</span><span class="price">250円</span></div>
+            <div class="menu-price-row"><span>中華ちまき 中（豚角煮入り）</span><span class="price">350円</span></div>
+            <div class="menu-price-row"><span>単品 ご飯</span><span class="price">250円</span></div>
+            <div class="menu-price-row"><span>単品 ご飯大盛り</span><span class="price">350円</span></div>
+            <div class="menu-price-row"><span>カップ味噌汁 各種</span><span class="price">200円</span></div>
+          </div>
+          <p class="menu-block-note" style="margin-top:.8rem;">味噌汁：あおさ / 赤だし / あさり / 豚汁</p>
+        </div>
+
+        <!-- 京風だし巻き玉子 -->
+        <div id="cat-dashimaki" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">京風だし巻き玉子</h3>
+          </div>
+          <p class="menu-block-note">焼き上がり：<strong>11時〜 / 15時〜 / 17時〜</strong>（数量限定）</p>
+          <div class="menu-price-grid">
+            <div class="menu-price-row"><span>だし巻き玉子</span><span class="price">600円</span></div>
+            <div class="menu-price-row"><span>だし巻き玉子 ネギ入り</span><span class="price">800円</span></div>
+            <div class="menu-price-row"><span>だし巻き玉子 そぼろ入り</span><span class="price">800円</span></div>
+          </div>
+        </div>
+
+        <!-- 写真ストリップ（だし巻き・デリ） -->
+        <div class="menu-photos fade-up">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6695.jpeg" alt="だし巻き玉子">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6701.jpeg" alt="だし巻き玉子そぼろ">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6055.jpeg" alt="カップデリ">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6704.jpeg" alt="カップデリ">
+        </div>
+
+        <!-- カップデリ -->
+        <div id="cat-deli" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">カップデリ</h3>
+            <span class="menu-block-price">各 350円</span>
+          </div>
+          <div class="menu-item-grid">
+            <span class="menu-item">紀州南高梅のハチミツ梅</span>
+            <span class="menu-item">よだれ鶏 / 棒棒鶏</span>
+            <span class="menu-item">蒸し鶏の油林鶏</span>
+            <span class="menu-item">バジルぽてとチキン</span>
+            <span class="menu-item">枝豆 トリュフの香り</span>
+            <span class="menu-item">鶏皮ぽん酢</span>
+          </div>
+        </div>
+
+        <!-- お惣菜 -->
+        <div id="cat-sozai" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">お惣菜</h3>
+            <span class="menu-block-price">各 500円</span>
+          </div>
+          <div class="menu-item-grid">
+            <span class="menu-item">鶏おでん8種</span>
+            <span class="menu-item">やげんナンコツの塩焼き</span>
+            <span class="menu-item">韓国風とり手羽先の旨辛焼き</span>
+            <span class="menu-item">鶏豚みそモツ煮</span>
+            <span class="menu-item">鶏皮とキンカンの甘辛煮</span>
+            <span class="menu-item">鶏の照り焼き タルタルソース</span>
+            <span class="menu-item">グリルソーセージ3種盛り</span>
+          </div>
+        </div>
+
+        <!-- 写真ストリップ（お惣菜） -->
+        <div class="menu-photos fade-up">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6694.jpeg" alt="照り焼き">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6063.jpeg" alt="手羽先">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6530.jpeg" alt="ソーセージ">
+          <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6714.jpeg" alt="お惣菜">
+        </div>
+
+        <!-- おやつ -->
+        <div id="cat-oyatsu" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">おやつ</h3>
+            <span class="menu-block-price">各 150円</span>
+          </div>
+          <p class="menu-block-note">小腹がすいたらコレ！学校帰りや、お酒のお供にもピッタリ</p>
+          <div class="menu-item-grid">
+            <span class="menu-item">焼きおにぎり 深井醤油</span>
+            <span class="menu-item">焼きおにぎり フルール・ド・セル</span>
+            <span class="menu-item">焼きおにぎり 味噌</span>
+            <span class="menu-item">焼きおにぎり ガーリック</span>
+            <span class="menu-item">とりマヨ明太子</span>
+            <span class="menu-item">とりマヨ梅</span>
+            <span class="menu-item">とりマヨわさび</span>
+            <span class="menu-item">とりマヨコチジャン</span>
+            <span class="menu-item">アスパラベーコン</span>
+            <span class="menu-item">焼きトウモロコシ</span>
+            <span class="menu-item">フランク先輩</span>
+            <span class="menu-item">タコさんウインナー</span>
+            <span class="menu-item">ナルトちゃん</span>
+            <span class="menu-item">チーかま君</span>
+            <span class="menu-item">帆立バター醤油</span>
+            <span class="menu-item">エビマヨ串</span>
+            <span class="menu-item">イカ焼き串</span>
+            <span class="menu-item">ハッシュドポテト</span>
+            <span class="menu-item">じゃがバター</span>
+            <span class="menu-item">じゃがアンチョビ</span>
+            <span class="menu-item">プチ桃まん</span>
+            <span class="menu-item">焼きいも大学</span>
+            <span class="menu-item">焼きりんごのタルト</span>
+            <span class="menu-item">焼きパイナップルのタルト</span>
+            <span class="menu-item">焼きマシュマロのタルト</span>
+          </div>
+        </div>
+
+        <!-- ドリンク -->
+        <div id="cat-drink" class="menu-block fade-up">
+          <div class="menu-block-head">
+            <h3 class="menu-block-title">ドリンク</h3>
+          </div>
+          <div class="menu-price-grid">
+            <div class="menu-price-row"><span>ビール</span><span class="price">350円</span></div>
+            <div class="menu-price-row"><span>チューハイ</span><span class="price">350円</span></div>
+            <div class="menu-price-row"><span>ハイボール</span><span class="price">350円</span></div>
+            <div class="menu-price-row"><span>黒ウーロン茶</span><span class="price">250円</span></div>
+            <div class="menu-price-row"><span>レッドブル</span><span class="price">250円</span></div>
+            <div class="menu-price-row"><span>ラムネ</span><span class="price">250円</span></div>
+            <div class="menu-price-row"><span>コーラ</span><span class="price">200円</span></div>
+            <div class="menu-price-row"><span>ジンジャーエール</span><span class="price">200円</span></div>
+            <div class="menu-price-row"><span>オレンジジュース</span><span class="price">200円</span></div>
+            <div class="menu-price-row"><span>おーいお茶</span><span class="price">200円</span></div>
+            <div class="menu-price-row"><span>コーヒー (Hot/Ice)</span><span class="price">100円</span></div>
+            <div class="menu-price-row"><span>紅茶 (Hot/Ice)</span><span class="price">100円</span></div>
           </div>
         </div>
 
@@ -705,8 +636,8 @@
             <span>焼きとり</span>
           </div>
           <div class="gallery-item">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6495.jpeg" alt="プレミアム串">
-            <span>プレミアム串</span>
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6495.jpeg" alt="イカ焼き串">
+            <span>イカ焼き串</span>
           </div>
           <div class="gallery-item">
             <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6083.jpeg" alt="やきとん">
@@ -725,8 +656,8 @@
             <span>チキンライス</span>
           </div>
           <div class="gallery-item">
-            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6694.jpeg" alt="鶏の照り焼き タルタルソース">
-            <span>照り焼きタルタル</span>
+            <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6694.jpeg" alt="やげんナンコツの塩焼き">
+            <span>やげんナンコツの塩焼き</span>
           </div>
           <div class="gallery-item">
             <img src="gigafile-0218-79462ba2c83807977b02a324a46c59a2/IMG_6530.jpeg" alt="グリルソーセージ3種盛り">
@@ -748,16 +679,16 @@
               <table class="access-table">
                 <tr><th>住所</th><td>〒359-1142<br>埼玉県所沢市上新井３丁目２２−３０</td></tr>
                 <tr><th>電話</th><td><a href="tel:07091507039">070-9150-7039</a></td></tr>
-                <tr><th>営業時間</th><td>毎日 11:30〜21:00</td></tr>
+                <tr><th>営業時間</th><td>毎日 11:30〜21:00<br><small style="color:var(--crimson);font-size:.8rem;">※在庫状況により閉店を早める場合がございます</small></td></tr>
                 <tr><th>決済</th><td>現金のみ</td></tr>
                 <tr><th>形態</th><td>テイクアウト専門店</td></tr>
               </table>
             </div>
             <div class="access-visual">
               <iframe src="https://www.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%89%80%E6%B2%A2%E5%B8%82%E4%B8%8A%E6%96%B0%E4%BA%953%E4%B8%81%E7%9B%AE22-30&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ししとう 所在地"></iframe>
-              <a href="https://www.google.com/maps/search/?api=1&query=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%89%80%E6%B2%A2%E5%B8%82%E4%B8%8A%E6%96%B0%E4%BA%953%E4%B8%81%E7%9B%AE22-30" target="_blank" rel="noopener noreferrer" class="access-map-btn">
+              <a href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E3%81%8D%E9%B3%A5+%E3%81%97%E3%81%97%E3%81%A8%E3%81%86+%E6%89%80%E6%B2%A2%E5%B8%82%E4%B8%8A%E6%96%B0%E4%BA%953%E4%B8%81%E7%9B%AE22-30" target="_blank" rel="noopener noreferrer" class="access-map-btn">
                 <span class="material-symbols-outlined" style="font-size:1rem;">open_in_new</span>
-                Google Map で大きく見る
+                Google Map でお店を見る
               </a>
             </div>
           </div>
@@ -777,7 +708,7 @@
           </details>
           <details class="faq-item fade-up">
             <summary>営業時間を教えてください。</summary>
-            <div class="faq-answer">毎日 11:30〜21:00 で通し営業しています。お昼のランチから夕食のおかずまで、幅広い時間帯でご利用いただけます。</div>
+            <div class="faq-answer">毎日 11:30〜21:00 で通し営業しています。お昼のランチから夕食のおかずまで、幅広い時間帯でご利用いただけます。<br>※在庫状況により閉店を早める場合がございます。</div>
           </details>
           <details class="faq-item fade-up">
             <summary>支払い方法は何がありますか？</summary>
@@ -834,58 +765,19 @@
   </footer>
 
   <script>
-    /* === Mobile Menu === */
-    const hamburger = document.querySelector('.hamburger');
-    const navMobile = document.querySelector('.nav-mobile');
-    const navOverlay = document.querySelector('.nav-overlay');
-    const mobileLinks = document.querySelectorAll('.nav-mobile a');
-    function toggleMenu() {
-      hamburger.classList.toggle('open');
-      navMobile.classList.toggle('open');
-      navOverlay.classList.toggle('open');
-    }
-    hamburger.addEventListener('click', toggleMenu);
-    navOverlay.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(l => l.addEventListener('click', toggleMenu));
+    const hamburger=document.querySelector('.hamburger'),navMobile=document.querySelector('.nav-mobile'),navOverlay=document.querySelector('.nav-overlay'),mobileLinks=document.querySelectorAll('.nav-mobile a');
+    function toggleMenu(){hamburger.classList.toggle('open');navMobile.classList.toggle('open');navOverlay.classList.toggle('open');}
+    hamburger.addEventListener('click',toggleMenu);
+    navOverlay.addEventListener('click',toggleMenu);
+    mobileLinks.forEach(l=>l.addEventListener('click',toggleMenu));
 
-    /* === Header Scroll === */
-    const header = document.getElementById('header');
-    function updateHeader() {
-      if (window.scrollY > 60) {
-        header.classList.remove('header--top');
-        header.classList.add('header--scrolled');
-      } else {
-        header.classList.add('header--top');
-        header.classList.remove('header--scrolled');
-      }
-    }
-    window.addEventListener('scroll', updateHeader, { passive: true });
+    const header=document.getElementById('header');
+    function updateHeader(){if(window.scrollY>60){header.classList.remove('header--top');header.classList.add('header--scrolled');}else{header.classList.add('header--top');header.classList.remove('header--scrolled');}}
+    window.addEventListener('scroll',updateHeader,{passive:true});
     updateHeader();
 
-    /* === Menu Tabs === */
-    const tabBtns = document.querySelectorAll('.menu-nav-btn');
-    const tabs = document.querySelectorAll('.menu-tab');
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabBtns.forEach(b => b.classList.remove('active'));
-        tabs.forEach(t => t.classList.remove('active'));
-        btn.classList.add('active');
-        const targetTab = document.getElementById(btn.dataset.tab);
-        targetTab.classList.add('active');
-        // Re-trigger fade-up for newly visible items
-        targetTab.querySelectorAll('.fade-up:not(.visible)').forEach(el => {
-          observer.observe(el);
-        });
-      });
-    });
-
-    /* === Scroll Animation === */
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
   </script>
 </body>
 </html>
